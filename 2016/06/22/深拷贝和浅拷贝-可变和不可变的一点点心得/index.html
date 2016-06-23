@@ -15,20 +15,20 @@
 
 
 
-<meta name="description" content="###现放一张图:
-###和2句官方文档片段copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by the c">
+<meta name="description" content="###先放一张图:###
+###和2句官方文档片段copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by th">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深拷贝和浅拷贝,可变和不可变的一点点心得">
 <meta property="og:url" content="http://yoursite.com/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/index.html">
 <meta property="og:site_name" content="Yanming’s blog">
-<meta property="og:description" content="###现放一张图:
-###和2句官方文档片段copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by the c">
+<meta property="og:description" content="###先放一张图:###
+###和2句官方文档片段copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by th">
 <meta property="og:image" content="http://yoursite.com/assets/images/2016/copyAbout.png">
-<meta property="og:updated_time" content="2016-06-23T07:03:28.000Z">
+<meta property="og:updated_time" content="2016-06-23T07:08:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深拷贝和浅拷贝,可变和不可变的一点点心得">
-<meta name="twitter:description" content="###现放一张图:
-###和2句官方文档片段copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by the c">
+<meta name="twitter:description" content="###先放一张图:###
+###和2句官方文档片段copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by th">
 <meta name="twitter:image" content="http://yoursite.com/assets/images/2016/copyAbout.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -290,7 +290,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>###现放一张图:<br><img src="/assets/images/2016/copyAbout.png" alt="关系图"></p>
+        <p>###先放一张图:###<br><img src="/assets/images/2016/copyAbout.png" alt="关系图"></p>
 <p>###和2句官方文档片段<br><code>copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by the class.</code><br><code>mutableCopy —— The copy returned is mutable whether the original is mutable or not.</code></p>
 <p>``</p>
 <p>###因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说</p>
@@ -302,21 +302,8 @@
 <li>既然是拷贝,无论是哪种方式,copy或者mutableCopy获取的对象都是不同的,但是深拷贝的对象则是完全独立(<em>这里强调一点的就是如果一个类的子类属于系统的一些类的,这些子类也只会被浅拷贝出来,而不会是全新的子类</em>),可以看第一张图,很清晰,举个例子:<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *a1 = <span class="string">@"hello"</span>;</span><br><span class="line"><span class="built_in">NSString</span> *a2 = <span class="string">@"world"</span>;</span><br><span class="line"></span><br><span class="line">CrazyBee *bee1 = [[CrazyBee alloc] init];<span class="comment">// 自建类,需要手动实现copyWithZone,或者mutableCopyWithZone方法</span></span><br><span class="line">CrazyBee *bee2 = [[CrazyBee alloc] init];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@:%p"</span>,bee1,bee1);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@:%p"</span>,bee2,bee2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原始对象</span></span><br><span class="line"><span class="built_in">NSArray</span> *originalArr = @[bee1,bee2];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"-------原始对象---------\noriginalArr:%p"</span>,originalArr);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"originalArr[0]:%p"</span>,originalArr[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浅拷贝</span></span><br><span class="line"><span class="keyword">id</span> copiedArr = [originalArr <span class="keyword">copy</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"------浅拷贝------\ncopiedArr:%p"</span>,&amp;copiedArr);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"copiedArr[0]:%p"</span>,copiedArr[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 伪深拷贝</span></span><br><span class="line"><span class="keyword">id</span> fakeCopiedArr = [originalArr mutableCopy];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"----伪深拷贝-----\nfakeCopiedArr:%p"</span>,fakeCopiedArr);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"fakeCopiedArr[0]:%p"</span>,fakeCopiedArr[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 深拷贝</span></span><br><span class="line"><span class="keyword">id</span> deepCopiedArr = [[<span class="built_in">NSMutableArray</span> alloc] initWithArray:originalArr copyItems:<span class="literal">YES</span>];<span class="comment">// 此方法会让子对象也调用copyWithZone/mutableCopyWithZone方法,这也是为什么自建类要手动实现拷贝的方法,不然会崩溃</span></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"----深拷贝-----\ndeepCopiedArr:%p"</span>,&amp;deepCopiedArr);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"deepCopiedArr[0]:%p"</span>,deepCopiedArr[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>###运行结果<br><code>&lt;CrazyBee: 0x7ff27ad41400&gt;:0x7ff27ad41400//地址1
-     &lt;CrazyBee: 0x7ff27ad3c820&gt;:0x7ff27ad3c820
-     -------原始对象---------
-    originalArr:0x7ff27ad01300
-    originalArr[0]:0x7ff27ad41400//地址1
-     ------浅拷贝------
-    copiedArr:0x7fff5bff8a28
-     copiedArr[0]:0x7ff27ad41400//地址1
-     ----伪深拷贝-----
-    fakeCopiedArr:0x7ff27af1aeb0
-    fakeCopiedArr[0]:0x7ff27ad41400//地址1
-     ----深拷贝-----
-    deepCopiedArr:0x7fff5bff8a18
-     deepCopiedArr[0]:0x7ff27af17e20// 新地址(如果上述的子类是a1,a2,这里也是地址1,也印证了系统默认使用浅拷贝的)</code></p>
-<p>###最后放上一段官方文档(附带简易翻译),我感觉说的已近很清楚了<br>`<br><em>Copy Functions</em></p>
+<p>###运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;CrazyBee: 0x7ff27ad41400&gt;:0x7ff27ad41400//地址1</span><br><span class="line">	&lt;CrazyBee: 0x7ff27ad3c820&gt;:0x7ff27ad3c820</span><br><span class="line">	-------原始对象---------</span><br><span class="line">originalArr:0x7ff27ad01300</span><br><span class="line">originalArr[0]:0x7ff27ad41400//地址1</span><br><span class="line"> ------浅拷贝------</span><br><span class="line">copiedArr:0x7fff5bff8a28</span><br><span class="line">	copiedArr[0]:0x7ff27ad41400//地址1</span><br><span class="line">	----伪深拷贝-----</span><br><span class="line">fakeCopiedArr:0x7ff27af1aeb0</span><br><span class="line">fakeCopiedArr[0]:0x7ff27ad41400//地址1</span><br><span class="line"> ----深拷贝-----</span><br><span class="line">deepCopiedArr:0x7fff5bff8a18</span><br><span class="line">	deepCopiedArr[0]:0x7ff27af17e20// 新地址(如果上述的子类是a1,a2,这里也是地址1,也印证了系统默认使用浅拷贝的)</span><br></pre></td></tr></table></figure></p>
+<p>###最后放上一段官方文档(附带简易翻译),我感觉说的已近很清楚了###<br>`<em>Copy Functions</em></p>
 <p>In general, a standard copy operation, which might also be called simple assignment, occurs when you use the = operator to assign the value of one variable to another. The expression myInt2 = myInt1, for example, causes the integer contents of myInt1 to be copied from the memory used by myInt1 into the memory used by myInt2. Following the copy operation, two separate areas of memory contain the same value. However, if you attempt to copy a Core Foundation object in this way, be aware that you will not duplicate the object itself, only the reference to the object.(基本类型数据的赋值(=),直接拷贝数据,实例对象,只会拷贝指针,指向被拷贝的对象,不会再创建额外的空间(存放指针的空间还是要有的))</p>
 <p>For example, someone new to Core Foundation might think that to make a copy of a CFString object she would use the expression myCFString2 = myCFString1. Again, this expression does not actually copy the string data. Because both myCFString1 and myCFString2 must have the CFStringRef type, this expression only copies the reference to the object. Following the copy operation, you have two copies of the reference to the CFString. This type of copy is very fast because only the reference is duplicated, but it is important to remember that copying a mutable object in this way is dangerous. As with programs that use global variables, if one part of your application changes an object using a copy of the reference, there is no way for other parts of the program which have copies of that reference to know that the data has changed.</p>
 <p>If you want to duplicate an object, you must use one of the functions provided by Core Foundation specifically for this purpose. Continuing with the CFString example, you would use CFStringCreateCopy to create an entirely new CFString object containing the same data as the original. Core Foundation types which have “CreateCopy” functions also provide the variant “CreateMutableCopy” which returns a copy of an object that can be modified.</p>
@@ -335,7 +322,7 @@
         <p><span>本文标题:</span><a href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/">深拷贝和浅拷贝,可变和不可变的一点点心得</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Yanming Fan</a></p>
         <p><span>发布时间:</span>2016-06-22, 14:05:47</p>
-        <p><span>最后更新:</span>2016-06-23, 15:03:28</p>
+        <p><span>最后更新:</span>2016-06-23, 15:08:42</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/" title="深拷贝和浅拷贝,可变和不可变的一点点心得">http://yoursite.com/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
