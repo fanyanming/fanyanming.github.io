@@ -284,11 +284,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>###老样子,先上图和文档,官方的<br><img src="/assets/images/2016/blocks.jpg" alt="block定义图"></p>
-<blockquote>
+        <h3 id="老样子-先上图和文档-官方的"><a href="#老样子-先上图和文档-官方的" class="headerlink" title="老样子,先上图和文档,官方的"></a>老样子,先上图和文档,官方的</h3><blockquote>
+<p><img src="/assets/images/2016/blocks.jpg" alt="block定义图"></p>
 <p>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.<br>Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution</p>
 </blockquote>
-<p>block 是iOS开发中很频繁使用的一种数据类型,特别是用在回调的场景中,下面就总结一些常见的使用方法,或者说定义方法</p>
+<p>block 是iOS开发中很频繁使用的一种数据类型,很类似于c语言的函数,特别是用在回调的场景中,下面就总结一些常见的声明block的方法,书写都是统一的,看上面的图就很侵袭了</p>
 <ol>
 <li>作为属性的block<br><strong>书写格式(一下格式都会有一个非block的作对比,最后总结)</strong></li>
 </ol>
@@ -308,9 +308,13 @@
 <p>总结:带返回值的就是我通知你,你也得通知我,有需求时你自然会用上的,trust me!</p>
 </blockquote>
 <ol>
-<li>作为参数的block<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对比用</span></span><br><span class="line">- (<span class="keyword">void</span>)testButtonClicked:(<span class="built_in">UIButton</span> *)buttonClicked;</span><br><span class="line"></span><br><span class="line"><span class="comment">// </span></span><br><span class="line">- (<span class="keyword">void</span>)buttonClicked:(<span class="keyword">void</span>(^)())buttonClicked;</span><br></pre></td></tr></table></figure>
+<li>作为参数的block<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对比用</span></span><br><span class="line">- (<span class="keyword">void</span>)testButtonClicked:(<span class="built_in">UIButton</span> *)buttonClicked;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类比上面的就很容易记住,都是(类型) + 名</span></span><br><span class="line">- (<span class="keyword">void</span>)buttonClicked:(<span class="keyword">void</span>(^)())buttonClicked;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p><strong>使用block最大的困惑莫过于书写,我自己的一些小类比,也未必准确,但是会便于记忆</strong></p>
+<blockquote>
+<p>声明一个变量分为两部分,类型+名称<br>同样声明一个block也是如此:类型+名称,但是block的类型的修饰分为三部分,<code>返回值</code>,<code>^</code>,<code>参数</code><br>然后属性block的声明书写就是:<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> *name;<span class="built_in">NSString</span> *(类型)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
       
     </div>
