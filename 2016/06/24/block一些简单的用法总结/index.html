@@ -26,7 +26,7 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
 
 Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to autom">
 <meta property="og:image" content="http://yoursite.com/assets/images/2016/blocks.jpg">
-<meta property="og:updated_time" content="2016-06-24T11:38:58.000Z">
+<meta property="og:updated_time" content="2016-06-27T07:06:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="block一些简单的用法总结">
 <meta name="twitter:description" content="老样子,先上图和文档,官方的
@@ -149,13 +149,13 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -257,7 +257,7 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-block一些简单的用法总结" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -298,9 +298,7 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
 <p>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.<br>Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution</p>
 </blockquote>
 <p>block 是iOS开发中很频繁使用的一种数据类型,很类似于c语言的函数,特别是用在回调的场景中,下面就总结一些常见的声明block的方法,书写都是统一的,看上面的图就很侵袭了</p>
-<ol>
-<li>作为属性的block<br><strong>书写格式(一下格式都会有一个非block的作对比,最后总结)</strong></li>
-</ol>
+<h3 id="作为属性的block"><a href="#作为属性的block" class="headerlink" title="作为属性的block"></a>作为属性的block</h3><p> <strong>书写格式(一下格式都会有一个非block的作对比,最后总结)</strong></p>
 <blockquote>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对比用</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> *name;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `void`为返回值类型,`^myBlock`为block名,`UIButton *buttonClicked`为参数的类型,参数数量不限,这里只写了一个,而且参数的名字也是可以省略的</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="keyword">void</span> (^myBlcok)(<span class="built_in">UIButton</span> *buttonClicked);</span><br></pre></td></tr></table></figure>
 </blockquote>
@@ -316,13 +314,9 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// view中调用</span></span><br><span class="line"><span class="keyword">if</span> (_noEasyBlock) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,_noEasyBlock(<span class="number">3</span>,<span class="number">5</span>));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>总结:带返回值的就是我通知你,你也得通知我,有需求时你自然会用上的,trust me!</p>
 </blockquote>
-<ol>
-<li>作为参数的block<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对比用</span></span><br><span class="line">- (<span class="keyword">void</span>)testButtonClicked:(<span class="built_in">UIButton</span> *)buttonClicked;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类比上面的就很容易记住,都是(类型) + 名</span></span><br><span class="line">- (<span class="keyword">void</span>)buttonClicked:(<span class="keyword">void</span>(^)())buttonClicked;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>使用block最大的困惑莫过于书写,我自己的一些小类比,也未必准确,但是会便于记忆</strong></p>
+<h3 id="作为参数的block"><a href="#作为参数的block" class="headerlink" title="作为参数的block"></a>作为参数的block</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对比用</span></span><br><span class="line">- (<span class="keyword">void</span>)testButtonClicked:(<span class="built_in">UIButton</span> *)buttonClicked;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类比上面的就很容易记住,都是(类型) + 名</span></span><br><span class="line">- (<span class="keyword">void</span>)buttonClicked:(<span class="keyword">void</span>(^)())buttonClicked;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>声明一个变量分为两部分,类型+名称<br>同样声明一个block也是如此:类型+名称,但是block的类型的修饰分为三部分,<code>返回值</code>,<code>^</code>,<code>参数</code><br>然后属性block的声明书写就是:<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> *name;<span class="built_in">NSString</span> *(类型)</span><br></pre></td></tr></table></figure></p>
+<p>总结:block作为参数时,其实使用场景和上面差不多,具体具体开发中自己可以体会,如果block使用的娴熟,delegate很少用了,毕竟要多写个协议,麻烦一些,当然delegate做通知的时候,条例,结构什么的确实清晰一些,不容易犯晕,代码的易读性也好一些.</p>
 </blockquote>
 
       
@@ -332,17 +326,17 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/06/24/block一些简单的用法总结/">block一些简单的用法总结</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Yanming Fan</a></p>
-        <p><span>发布时间:</span>2016-06-24, 13:26:39</p>
-        <p><span>最后更新:</span>2016-06-24, 19:38:58</p>
+        <p><span>Title:</span><a href="/2016/06/24/block一些简单的用法总结/">block一些简单的用法总结</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Yanming Fan</a></p>
+        <p><span>Created:</span>2016-06-24, 13:26:39</p>
+        <p><span>Updated:</span>2016-06-27, 15:06:04</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/06/24/block一些简单的用法总结/" title="block一些简单的用法总结">http://yoursite.com/2016/06/24/block一些简单的用法总结/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/06/24/block一些简单的用法总结/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2016/06/24/block一些简单的用法总结/" title="block一些简单的用法总结">http://yoursite.com/2016/06/24/block一些简单的用法总结/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/06/24/block一些简单的用法总结/　　By Yanming Fan" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
         </p>
     </div>
 
@@ -363,8 +357,8 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
 </article>
 
     <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#老样子-先上图和文档-官方的"><span class="toc-number">1.</span> <span class="toc-text">老样子,先上图和文档,官方的</span></a></li></ol>
+    <strong class="toc-title">Contents</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#老样子-先上图和文档-官方的"><span class="toc-number">1.</span> <span class="toc-text">老样子,先上图和文档,官方的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为属性的block"><span class="toc-number">2.</span> <span class="toc-text">作为属性的block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为参数的block"><span class="toc-number">3.</span> <span class="toc-text">作为参数的block</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
@@ -373,10 +367,10 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
     }
 </style>
 
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
 <script>
-    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    yiliaConfig.toc = ["Hide", "Show", !!"false"];
 </script>
 
 
@@ -475,13 +469,13 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/" title="下一篇: 深拷贝和浅拷贝,可变和不可变的一点点心得">
+            <a href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/" title="Next: 深拷贝和浅拷贝,可变和不可变的一点点心得">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -504,14 +498,14 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
                 2014-2016 Yanming Fan
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >本站到访数: 
+                        <span id="site-visit" >Site Visitors: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -521,7 +515,7 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
+                        <span id="page-visit">Page Hits: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -554,9 +548,9 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
