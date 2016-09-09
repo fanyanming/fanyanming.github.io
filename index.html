@@ -145,13 +145,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -253,7 +253,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
   
@@ -284,19 +284,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>####以下技巧适用并不是非常新的新手(😬),因为一些东西都是一笔带过</p>
+              <p>####以下技巧适用并不是非常新的新手(😬),因为一些东西都是一笔带过</p>
 <ol>
-<li><p>调到AppStore评分界面,是评分界面哦,代码如下,只需将’你的APPID’替换为你自己的APPID即可</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *baseUrl = <span class="string">@"https://itunes.apple.com//WebObjects/MZStore.woa/wa/viewContentsUserReviews?id='你的APPID'&amp;pageNumber=0&amp;sortOrdering=2&amp;type=Purple+Software&amp;mt=8"</span>;</span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] openURL:[<span class="built_in">NSURL</span> URLWithString:baseUrl]];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>推送请求的deviceToken,会在卸载重装后变化,正常使用期间是不变的</p>
-</li>
-<li>开发时,可能会用动态的启动画面,最快的方法就是做一个gif图片,用webview呈现即可.不用视频,也不用一帧一帧的做动画来展示</li>
-<li>UITabBar 的didSelectItem方法触发后,所在UITabTarController的self.selectedIndex,是还没有切换当前选定的控制器的索引的,所以在判断相关时间的业务中,使用UITabTarController的代理方法didSelectViewController方法</li>
-<li>很多人都说设置cornerRadius的方法少用,其实只要不在有大量重复出现的地方用,是没什么问题的,要不苹果干嘛搞这玩意儿.所以不用一个静态页面的一个圆角元素也想着绘制什么的…</li>
-<li>dispatch once 不会随着所创建地方所在类的销毁而销毁,除非程序被杀死…所以不是你想着只用一次的地方就能用的,比如说,你想在控制器的声明一个属性,每次加载控制器的时候只能被复制一次,然后你就在它的setter中用dispatch once 来控制,这样的结果就是你就只能赋值一次,真的是一次,这个控制器死后,你下次点进来,你再设置是没用了的.</li>
-</ol>
-
+<li><p>调到AppStore评分界面,是评分界面哦,代码如下,只需将’你的APPID’替换为你自己的APPID即可
+          
       
     </div>
     
@@ -305,6 +296,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2016/08/24/iOS-那些零碎但有用的东西/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -349,32 +344,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="老样子-先上图和文档-官方的"><a href="#老样子-先上图和文档-官方的" class="headerlink" title="老样子,先上图和文档,官方的"></a>老样子,先上图和文档,官方的</h3><blockquote>
+              <h3 id="老样子-先上图和文档-官方的"><a href="#老样子-先上图和文档-官方的" class="headerlink" title="老样子,先上图和文档,官方的"></a>老样子,先上图和文档,官方的</h3><blockquote>
 <p><img src="/assets/images/2016/blocks.jpg" alt="block定义图"></p>
-<p>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.<br>Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution</p>
-</blockquote>
-<p>block 是iOS开发中很频繁使用的一种数据类型,很类似于c语言的函数,特别是用在回调的场景中,下面就总结一些常见的声明block的方法,书写都是统一的,看上面的图就很侵袭了</p>
-<h3 id="作为属性的block"><a href="#作为属性的block" class="headerlink" title="作为属性的block"></a>作为属性的block</h3><p> <strong>书写格式(一下格式都会有一个非block的作对比,最后总结)</strong></p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对比用</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> *name;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `void`为返回值类型,`^myBlock`为block名,`UIButton *buttonClicked`为参数的类型,参数数量不限,这里只写了一个,而且参数的名字也是可以省略的</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="keyword">void</span> (^myBlcok)(<span class="built_in">UIButton</span> *buttonClicked);</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p> <strong>使用场景</strong></p>
-<blockquote>
-<p>其实这里的使用就和delegate方法相似,只不过更简单.例如,你在一个view中点击了一个按钮,要通知控制器做出反应,你就可以在这个view中定义这样一个block,然后在控制器实现<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下代码只是部分代码</span></span><br><span class="line"><span class="comment">// 控制器中实现</span></span><br><span class="line">[view setMyBlock:^(<span class="built_in">UIButton</span> *buttonClicked) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(@“view的%@按钮被点了,该干啥干啥去”, buttonClicked);</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// view中调用,通知</span></span><br><span class="line"><span class="keyword">if</span> (_myBlock) &#123;</span><br><span class="line">        _myBlock(buttonClicked);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><strong>上面说的都是无返回值的,有人会问那有返回值的呢?上代码</strong></p>
-<blockquote>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// view中定义了这样一个有参数的block</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="keyword">int</span> (^noEasyBlock)(<span class="keyword">int</span>, <span class="keyword">int</span>);</span><br></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 控制器中实现</span></span><br><span class="line">[view setNoEasyBlock:^<span class="keyword">int</span>(<span class="keyword">int</span> a, <span class="keyword">int</span> b) &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// view中调用</span></span><br><span class="line"><span class="keyword">if</span> (_noEasyBlock) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,_noEasyBlock(<span class="number">3</span>,<span class="number">5</span>));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>总结:带返回值的就是我通知你,你也得通知我,有需求时你自然会用上的,trust me!</p>
-</blockquote>
-<h3 id="作为参数的block"><a href="#作为参数的block" class="headerlink" title="作为参数的block"></a>作为参数的block</h3><blockquote>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对比用</span></span><br><span class="line">- (<span class="keyword">void</span>)testButtonClicked:(<span class="built_in">UIButton</span> *)buttonClicked;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类比上面的就很容易记住,都是(类型) + 名</span></span><br><span class="line">- (<span class="keyword">void</span>)buttonClicked:(<span class="keyword">void</span>(^)())buttonClicked;</span><br></pre></td></tr></table></figure>
-<p>总结:block作为参数时,其实使用场景和上面差不多,具体具体开发中自己可以体会,如果block使用的娴熟,delegate很少用了,毕竟要多写个协议,麻烦一些,当然delegate做通知的时候,条例,结构什么的确实清晰一些,不容易犯晕,代码的易读性也好一些.</p>
-</blockquote>
-
+<p>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.
+          
       
     </div>
     
@@ -383,6 +356,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2016/06/24/block一些简单的用法总结/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -427,29 +404,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="先放一张图"><a href="#先放一张图" class="headerlink" title="先放一张图:"></a>先放一张图:</h3><p><img src="/assets/images/2016/copyAbout.png" alt="关系图"></p>
+              <h3 id="先放一张图"><a href="#先放一张图" class="headerlink" title="先放一张图:"></a>先放一张图:</h3><p><img src="/assets/images/2016/copyAbout.png" alt="关系图"></p>
 <h3 id="和2句官方文档片段"><a href="#和2句官方文档片段" class="headerlink" title="和2句官方文档片段"></a>和2句官方文档片段</h3><p><code>copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by the class.</code><br><code>mutableCopy —— The copy returned is mutable whether the original is mutable or not.</code></p>
-<h3 id="因为这两个概念实在是易于混淆-所以一下说的都是肯定的-错误的不说"><a href="#因为这两个概念实在是易于混淆-所以一下说的都是肯定的-错误的不说" class="headerlink" title="因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说"></a>因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说</h3><ol>
-<li>先把上面两句转化(翻译😄),使用copy方法后返回的对象和被拷贝的对象的可变性一致,当然被拷贝的对象没有相关属性依然一致;使用mutableCopy方法返回的对象,为可变,无论被拷贝的对象是否可变.</li>
-<li>深拷贝和浅拷贝,与可变和不可变没有必然关系</li>
-<li>系统的类大部分都是执行的浅拷贝,无论是使用copy方法还是mutableCopy方法,所以说使用mutableCopy的不一定是深拷贝</li>
-<li>系统的一些类<code>NSDictionary</code>,<code>NSArray</code>,<code>NSSet</code>等,默认都是浅拷贝,无论你是用哪种的拷贝方法</li>
-<li>既然是拷贝,无论是哪种方式,copy或者mutableCopy获取的对象都是不同的,但是深拷贝的对象则是完全独立(<em>这里强调一点的就是如果一个类的子类属于系统的一些类的,这些子类也只会被浅拷贝出来,而不会是全新的子类</em>),可以看第一张图,很清晰,举个例子:<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *a1 = <span class="string">@"hello"</span>;</span><br><span class="line"><span class="built_in">NSString</span> *a2 = <span class="string">@"world"</span>;</span><br><span class="line"></span><br><span class="line">CrazyBee *bee1 = [[CrazyBee alloc] init];<span class="comment">// 自建类,需要手动实现copyWithZone,或者mutableCopyWithZone方法</span></span><br><span class="line">CrazyBee *bee2 = [[CrazyBee alloc] init];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@:%p"</span>,bee1,bee1);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@:%p"</span>,bee2,bee2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原始对象</span></span><br><span class="line"><span class="built_in">NSArray</span> *originalArr = @[bee1,bee2];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"-------原始对象---------\noriginalArr:%p"</span>,originalArr);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"originalArr[0]:%p"</span>,originalArr[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浅拷贝</span></span><br><span class="line"><span class="keyword">id</span> copiedArr = [originalArr <span class="keyword">copy</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"------浅拷贝------\ncopiedArr:%p"</span>,&amp;copiedArr);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"copiedArr[0]:%p"</span>,copiedArr[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 伪深拷贝</span></span><br><span class="line"><span class="keyword">id</span> fakeCopiedArr = [originalArr mutableCopy];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"----伪深拷贝-----\nfakeCopiedArr:%p"</span>,fakeCopiedArr);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"fakeCopiedArr[0]:%p"</span>,fakeCopiedArr[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 深拷贝</span></span><br><span class="line"><span class="keyword">id</span> deepCopiedArr = [[<span class="built_in">NSMutableArray</span> alloc] initWithArray:originalArr copyItems:<span class="literal">YES</span>];<span class="comment">// 此方法会让子对象也调用copyWithZone/mutableCopyWithZone方法,这也是为什么自建类要手动实现拷贝的方法,不然会崩溃</span></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"----深拷贝-----\ndeepCopiedArr:%p"</span>,&amp;deepCopiedArr);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"deepCopiedArr[0]:%p"</span>,deepCopiedArr[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;CrazyBee: 0x7ff27ad41400&gt;:0x7ff27ad41400//地址1</span><br><span class="line">	&lt;CrazyBee: 0x7ff27ad3c820&gt;:0x7ff27ad3c820</span><br><span class="line">	-------原始对象---------</span><br><span class="line">originalArr:0x7ff27ad01300</span><br><span class="line">originalArr[0]:0x7ff27ad41400//地址1</span><br><span class="line"> ------浅拷贝------</span><br><span class="line">copiedArr:0x7fff5bff8a28</span><br><span class="line">	copiedArr[0]:0x7ff27ad41400//地址1</span><br><span class="line">	----伪深拷贝-----</span><br><span class="line">fakeCopiedArr:0x7ff27af1aeb0</span><br><span class="line">fakeCopiedArr[0]:0x7ff27ad41400//地址1</span><br><span class="line"> ----深拷贝-----</span><br><span class="line">deepCopiedArr:0x7fff5bff8a18</span><br><span class="line">	deepCopiedArr[0]:0x7ff27af17e20// 新地址(如果上述的子类是a1,a2,这里也是地址1,也印证了系统默认使用浅拷贝的)</span><br></pre></td></tr></table></figure>
-<h3 id="最后放上一段官方文档-附带简易翻译-我感觉说的已近很清楚了"><a href="#最后放上一段官方文档-附带简易翻译-我感觉说的已近很清楚了" class="headerlink" title="最后放上一段官方文档(附带简易翻译),我感觉说的已近很清楚了"></a>最后放上一段官方文档(附带简易翻译),我感觉说的已近很清楚了</h3><blockquote>
-<p><strong>Copy Functions</strong></p>
-<p>In general, a standard copy operation, which might also be called simple assignment, occurs when you use the = operator to assign the value of one variable to another. The expression myInt2 = myInt1, for example, causes the integer contents of myInt1 to be copied from the memory used by myInt1 into the memory used by myInt2. Following the copy operation, two separate areas of memory contain the same value. However, if you attempt to copy a Core Foundation object in this way, be aware that you will not duplicate the object itself, only the reference to the object.(基本类型数据的赋值(=),直接拷贝数据,实例对象,只会拷贝指针,指向被拷贝的对象,不会再创建额外的空间(存放指针的空间还是要有的))</p>
-<p>For example, someone new to Core Foundation might think that to make a copy of a CFString object she would use the expression myCFString2 = myCFString1. Again, this expression does not actually copy the string data. Because both myCFString1 and myCFString2 must have the CFStringRef type, this expression only copies the reference to the object. Following the copy operation, you have two copies of the reference to the CFString. This type of copy is very fast because only the reference is duplicated, but it is important to remember that copying a mutable object in this way is dangerous. As with programs that use global variables, if one part of your application changes an object using a copy of the reference, there is no way for other parts of the program which have copies of that reference to know that the data has changed.</p>
-<p>If you want to duplicate an object, you must use one of the functions provided by Core Foundation specifically for this purpose. Continuing with the CFString example, you would use CFStringCreateCopy to create an entirely new CFString object containing the same data as the original. Core Foundation types which have “CreateCopy” functions also provide the variant “CreateMutableCopy” which returns a copy of an object that can be modified.</p>
-<p><strong>Shallow Copy</strong></p>
-<p>Copying compound objects, objects such as collection objects that can contain other objects, must also be done with care. As you would expect, using the = operator to perform a copy on these objects results in a duplication of the object reference. In contrast to simple objects like CFString and CFData, the “CreateCopy” functions provided for compound objects such as CFArray and CFSet actually perform a shallow copy. In the case of these objects, a shallow copy means that a new collection object is created, but the contents of the original collection are not duplicated—only the object references are copied to the new container. This type of copy is useful if, for example, you have an array that’s immutable and you want to reorder it. In this case, you don’t want to duplicate all of the contained objects because there’s no need to change them—and why use up that extra memory? You just want the set of included objects to be changed. The same risks apply here as with copying object references with simple types.(对于复杂的对象,对象中又包含对象的,浅复制则只拷贝容器对象,而拷贝出来的对象内的对象则依然指向被拷贝的对象内的子对象,而且这也是系统建议的拷贝方法)</p>
-<p><strong>Deep Copy</strong></p>
-<p>When you want to create an entirely new compound object, you must perform a deep copy. A deep copy duplicates the compound object as well as the contents of all of its contained objects. The current release of Core Foundation includes a function that performs deep copying of a property list (see CFPropertyListCreateDeepCopy). If you want to create deep copies of other structures, you could perform the deep copy yourself by recursively descending into the compound object and copying all of its contents one by one. Take care in implementing this functionality as compound objects can be recursive—they may directly or indirectly contain a reference to themselves—which can cause a recursive loop.(同样针对这类复杂的对象来说,深复制,则是将子对象也全部复制)</p>
-</blockquote>
-<p>参考:官网文档,<a href="http://xiongzenghuidegithub.github.io/blog/2016/03/26/qian-kao-bei-yu-shen-kao-bei/" target="_blank" rel="external">浅拷贝与深拷贝</a></p>
-
+<h3 id="因为这两个概念实在是易于混淆-所以一下说的都是肯定的-错误的不说"><a href="#因为这两个概念实在是易于混淆-所以一下说的都是肯定的-错误的不说" class="headerlink" title="因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说"></a>因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说
+          
       
     </div>
     
@@ -458,6 +416,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -502,7 +464,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>写这篇文章,其实就是对网上一系列的教程的一个简化,只说一个123,可能不大适合小白(本文只针对mac电脑,笔者iOS开发者,所以😄)<br>
+              <p>写这篇文章,其实就是对网上一系列的教程的一个简化,只说一个123
           
       
     </div>
@@ -514,70 +476,8 @@
       
       
         <p class="article-more-link">
-          <a href="/2016/06/21/hexo-github-搭建个人博客简述/#more">阅读全文 >></a>
+          <a href="/2016/06/21/hexo-github-搭建个人博客简述/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/21/hello-world/" class="article-date">
-      <time datetime="2016-06-21T01:04:19.000Z" itemprop="datePublished">2016-06-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
       
       <div class="clearfix"></div>
     </div>
@@ -605,14 +505,14 @@
                 2014-2016 Yanming Fan
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >本站到访数: 
+                        <span id="site-visit" >Site Visitors: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -622,7 +522,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
+                        <span id="page-visit">Page Hits: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -655,9 +555,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
