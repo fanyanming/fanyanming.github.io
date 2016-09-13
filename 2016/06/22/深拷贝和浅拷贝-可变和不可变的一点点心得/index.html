@@ -24,7 +24,7 @@
 <meta property="og:description" content="先放一张图:
 和2句官方文档片段copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by the class.m">
 <meta property="og:image" content="http://fanyanming/fanyanming.github.io/assets/images/2016/copyAbout.png">
-<meta property="og:updated_time" content="2016-09-09T06:13:25.000Z">
+<meta property="og:updated_time" content="2016-09-13T10:01:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深拷贝和浅拷贝,可变和不可变的一点点心得">
 <meta name="twitter:description" content="先放一张图:
@@ -290,7 +290,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="先放一张图"><a href="#先放一张图" class="headerlink" title="先放一张图:"></a>先放一张图:</h3><p><img src="/assets/images/2016/copyAbout.png" alt="关系图"></p>
+        <h4 id="先放一张图"><a href="#先放一张图" class="headerlink" title="先放一张图:"></a>先放一张图:</h4><p><img src="/assets/images/2016/copyAbout.png" alt="关系图"></p>
 <h3 id="和2句官方文档片段"><a href="#和2句官方文档片段" class="headerlink" title="和2句官方文档片段"></a>和2句官方文档片段</h3><p><code>copy —- The copy returned is immutable if the consideration “immutable vs. mutable” applies to the receiving object; otherwise the exact nature of the copy is determined by the class.</code><br><code>mutableCopy —— The copy returned is mutable whether the original is mutable or not.</code></p>
 <h3 id="因为这两个概念实在是易于混淆-所以一下说的都是肯定的-错误的不说"><a href="#因为这两个概念实在是易于混淆-所以一下说的都是肯定的-错误的不说" class="headerlink" title="因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说"></a>因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说<a id="more"></a></h3><ol>
 <li>先把上面两句转化(翻译😄),使用copy方法后返回的对象和被拷贝的对象的可变性一致,当然被拷贝的对象没有相关属性依然一致;使用mutableCopy方法返回的对象,为可变,无论被拷贝的对象是否可变.</li>
@@ -323,7 +323,7 @@
         <p><span>本文标题:</span><a href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/">深拷贝和浅拷贝,可变和不可变的一点点心得</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Yanming Fan</a></p>
         <p><span>发布时间:</span>2016-06-22, 14:05:47</p>
-        <p><span>最后更新:</span>2016-09-09, 14:13:25</p>
+        <p><span>最后更新:</span>2016-09-13, 18:01:07</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/" title="深拷贝和浅拷贝,可变和不可变的一点点心得">http://fanyanming/fanyanming.github.io/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/</a>
             <span class="copy-path" data-clipboard-text="原文: http://fanyanming/fanyanming.github.io/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -358,7 +358,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#先放一张图"><span class="toc-number">1.</span> <span class="toc-text">先放一张图:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和2句官方文档片段"><span class="toc-number">2.</span> <span class="toc-text">和2句官方文档片段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因为这两个概念实在是易于混淆-所以一下说的都是肯定的-错误的不说"><span class="toc-number">3.</span> <span class="toc-text">因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行结果"><span class="toc-number">4.</span> <span class="toc-text">运行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后放上一段官方文档-附带简易翻译-我感觉说的已近很清楚了"><span class="toc-number">5.</span> <span class="toc-text">最后放上一段官方文档(附带简易翻译),我感觉说的已近很清楚了</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#先放一张图"><span class="toc-number">1.</span> <span class="toc-text">先放一张图:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和2句官方文档片段"><span class="toc-number"></span> <span class="toc-text">和2句官方文档片段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因为这两个概念实在是易于混淆-所以一下说的都是肯定的-错误的不说"><span class="toc-number"></span> <span class="toc-text">因为这两个概念实在是易于混淆,所以一下说的都是肯定的,错误的不说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行结果"><span class="toc-number"></span> <span class="toc-text">运行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后放上一段官方文档-附带简易翻译-我感觉说的已近很清楚了"><span class="toc-number"></span> <span class="toc-text">最后放上一段官方文档(附带简易翻译),我感觉说的已近很清楚了</span></a>
 </div>
 <style>
     .left-col .switch-btn,
