@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/index.html">
 <meta property="og:site_name" content="Yanming’s blog">
 <meta property="og:description" content="####完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录">
-<meta property="og:updated_time" content="2016-09-13T05:37:13.000Z">
+<meta property="og:updated_time" content="2016-09-13T09:32:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 3.0,英文文档学习记录(持续更新)">
 <meta name="twitter:description" content="####完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录">
@@ -141,13 +141,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -249,7 +249,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap"><article id="post-swift-3-0-英文文档学习记录-持续更新" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -295,6 +295,31 @@
 <li>forin语句,如果遍历的是字典,是可以同时遍历value和key的,而且系统在编译的时候就会判断,例如你不是字典类型的元素,非要按key-value方式来判断,它就会报错</li>
 <li>类的声明中,属性必须要有一个初始值,无论是哪种方式,直接赋值,或者同过带参数init函数来初始化,反正要有,类的声明,可以是没有基类的,所以你在声明一个类时,可以不继承任何类.当然你在OC中也可以这样写,但是,但是,你在这个类就是什么方法都没有,生成器都没,但是swift中,你依然可以用()来创建,无论是父类还是子类,只要有属性没有直接赋予初始值,那么你在创建时都要传入缺少初始值的属性的值</li>
 <li>属性声明也可以自定义setter和getter方法,但是在swift中,有setter和getter的属性,一般被视为计算属性,和属性本身其实关系不大,用OC的思想可能有点费解….例如:有个A属性,有个B属性,有个C属性,C属性有setter和getter方法,C可能就是功能性,比如A和B组合的一个效果什么的sum啥的</li>
+<li><p>枚举,定义方式跟OC差不多,但是灵活的很多,使用范围更广,不限于整型,而且可以使用方法,用起来更贴近于自然的方式,贴近于人类的思考方式,而且每一个枚举的元素会有rawValue属性(只有在枚举声明的时候指明成员类型的才有,因为只有枚举本身有rawType的时候,枚举的成员才有rawValue),也就是你写在枚举名后面的值,不写的话会默认为枚举名,打印的时候也会以枚举名显示,OC中默认会显示rawValue,不论你写的什么GenderMan, GenderWoman,打印出来都是整型值.下面是随便写的一些枚举,是不是很灵活啊<br>‘’’<br>enum Gender:Int {</p>
+<pre><code>case GenderMale = 1
+case GenderFemale
+case GenderOther
+
+func descriptionInChinese() -&gt; String {
+    switch self {
+    case . GenderMale:
+        return &quot;男人&quot;
+    case . GenderFemale:
+        return &quot;女人&quot;
+    default:
+        return &quot;其他&quot;
+    }
+}
+</code></pre><p> }</p>
+<p> enum myList: String {</p>
+<pre><code>case potato = &quot;土豆&quot;
+case drinkWater = &quot;饮用水&quot;
+</code></pre><p> }<br>‘’’<br>还不是看起来像是一个类的定义,只不过把class关键字换成了enum,哈哈,如果是struct就更像了,官方的说法就是,他们确实有很多相似之处,但是最大的不同就是,结构体的使用都是拷贝方式,你引用几次就拷贝几次,但是class就不同,他是真的是引用,你可以理解为,同一个对象,你在不同的地方用,其实只是用不同的指针指向它而已,可以说,class更加节省空间,附上原话,免得说我瞎扯,😁</p>
+<blockquote>
+<p>“Use struct to create a structure. Structures support many of the same behaviors as classes, including methods and initializers. One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.”<br>摘录来自: Apple Inc. “The Swift Programming Language (Swift 3)”。 iBooks. </p>
+</blockquote>
+</li>
+<li>上面也提到结构体,其实你可以认为swift中所有类型的对象都是结构体,只是说他们各自有一些特殊的属性,枚举也是一种结构体,</li>
 </ol>
 
       
@@ -304,17 +329,17 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(持续更新)</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">Yanming Fan</a></p>
-        <p><span>Created:</span>2016-09-09, 14:30:17</p>
-        <p><span>Updated:</span>2016-09-13, 13:37:13</p>
+        <p><span>本文标题:</span><a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(持续更新)</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Yanming Fan</a></p>
+        <p><span>发布时间:</span>2016-09-09, 14:30:17</p>
+        <p><span>最后更新:</span>2016-09-13, 17:32:28</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/" title="swift 3.0,英文文档学习记录(持续更新)">http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/</a>
-            <span class="copy-path" data-clipboard-text="From http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/　　By Yanming Fan" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/" title="swift 3.0,英文文档学习记录(持续更新)">http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
         </p>
     </div>
 
@@ -335,7 +360,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
+    <strong class="toc-title">文章目录</strong>
     
 </div>
 <style>
@@ -345,10 +370,10 @@
     }
 </style>
 
-<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
 <script>
-    yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
 </script>
 
 
@@ -447,13 +472,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/24/iOS-那些零碎但有用的东西/" title="Next: iOS 那些零碎但有用的东西">
+            <a href="/2016/08/24/iOS-那些零碎但有用的东西/" title="下一篇: iOS 那些零碎但有用的东西">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -476,14 +501,14 @@
                 2014-2016 Yanming Fan
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >Site Visitors: 
+                        <span id="site-visit" >本站到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -493,7 +518,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">Page Hits: 
+                        <span id="page-visit">本页阅读量: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -526,9 +551,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
