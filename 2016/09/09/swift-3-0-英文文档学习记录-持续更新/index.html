@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/index.html">
 <meta property="og:site_name" content="Yanming’s blog">
 <meta property="og:description" content="####完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录">
-<meta property="og:updated_time" content="2016-09-13T09:32:28.000Z">
+<meta property="og:updated_time" content="2016-09-13T09:34:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 3.0,英文文档学习记录(持续更新)">
 <meta name="twitter:description" content="####完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录">
@@ -295,7 +295,7 @@
 <li>forin语句,如果遍历的是字典,是可以同时遍历value和key的,而且系统在编译的时候就会判断,例如你不是字典类型的元素,非要按key-value方式来判断,它就会报错</li>
 <li>类的声明中,属性必须要有一个初始值,无论是哪种方式,直接赋值,或者同过带参数init函数来初始化,反正要有,类的声明,可以是没有基类的,所以你在声明一个类时,可以不继承任何类.当然你在OC中也可以这样写,但是,但是,你在这个类就是什么方法都没有,生成器都没,但是swift中,你依然可以用()来创建,无论是父类还是子类,只要有属性没有直接赋予初始值,那么你在创建时都要传入缺少初始值的属性的值</li>
 <li>属性声明也可以自定义setter和getter方法,但是在swift中,有setter和getter的属性,一般被视为计算属性,和属性本身其实关系不大,用OC的思想可能有点费解….例如:有个A属性,有个B属性,有个C属性,C属性有setter和getter方法,C可能就是功能性,比如A和B组合的一个效果什么的sum啥的</li>
-<li><p>枚举,定义方式跟OC差不多,但是灵活的很多,使用范围更广,不限于整型,而且可以使用方法,用起来更贴近于自然的方式,贴近于人类的思考方式,而且每一个枚举的元素会有rawValue属性(只有在枚举声明的时候指明成员类型的才有,因为只有枚举本身有rawType的时候,枚举的成员才有rawValue),也就是你写在枚举名后面的值,不写的话会默认为枚举名,打印的时候也会以枚举名显示,OC中默认会显示rawValue,不论你写的什么GenderMan, GenderWoman,打印出来都是整型值.下面是随便写的一些枚举,是不是很灵活啊<br>‘’’<br>enum Gender:Int {</p>
+<li><p>枚举,定义方式跟OC差不多,但是灵活的很多,使用范围更广,不限于整型,而且可以使用方法,用起来更贴近于自然的方式,贴近于人类的思考方式,而且每一个枚举的元素会有rawValue属性(只有在枚举声明的时候指明成员类型的才有,因为只有枚举本身有rawType的时候,枚举的成员才有rawValue),也就是你写在枚举名后面的值,不写的话会默认为枚举名,打印的时候也会以枚举名显示,OC中默认会显示rawValue,不论你写的什么GenderMan, GenderWoman,打印出来都是整型值.下面是随便写的一些枚举,是不是很灵活啊<br>‘’’enum Gender:Int {</p>
 <pre><code>case GenderMale = 1
 case GenderFemale
 case GenderOther
@@ -314,7 +314,7 @@ func descriptionInChinese() -&gt; String {
 <p> enum myList: String {</p>
 <pre><code>case potato = &quot;土豆&quot;
 case drinkWater = &quot;饮用水&quot;
-</code></pre><p> }<br>‘’’<br>还不是看起来像是一个类的定义,只不过把class关键字换成了enum,哈哈,如果是struct就更像了,官方的说法就是,他们确实有很多相似之处,但是最大的不同就是,结构体的使用都是拷贝方式,你引用几次就拷贝几次,但是class就不同,他是真的是引用,你可以理解为,同一个对象,你在不同的地方用,其实只是用不同的指针指向它而已,可以说,class更加节省空间,附上原话,免得说我瞎扯,😁</p>
+</code></pre><p> }’’’<br>还不是看起来像是一个类的定义,只不过把class关键字换成了enum,哈哈,如果是struct就更像了,官方的说法就是,他们确实有很多相似之处,但是最大的不同就是,结构体的使用都是拷贝方式,你引用几次就拷贝几次,但是class就不同,他是真的是引用,你可以理解为,同一个对象,你在不同的地方用,其实只是用不同的指针指向它而已,可以说,class更加节省空间,附上原话,免得说我瞎扯,😁</p>
 <blockquote>
 <p>“Use struct to create a structure. Structures support many of the same behaviors as classes, including methods and initializers. One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.”<br>摘录来自: Apple Inc. “The Swift Programming Language (Swift 3)”。 iBooks. </p>
 </blockquote>
@@ -332,7 +332,7 @@ case drinkWater = &quot;饮用水&quot;
         <p><span>本文标题:</span><a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(持续更新)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Yanming Fan</a></p>
         <p><span>发布时间:</span>2016-09-09, 14:30:17</p>
-        <p><span>最后更新:</span>2016-09-13, 17:32:28</p>
+        <p><span>最后更新:</span>2016-09-13, 17:34:38</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/" title="swift 3.0,英文文档学习记录(持续更新)">http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/</a>
             <span class="copy-path" data-clipboard-text="原文: http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
