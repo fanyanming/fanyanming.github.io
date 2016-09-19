@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/index.html">
 <meta property="og:site_name" content="Yanming’s blog">
 <meta property="og:description" content="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录">
-<meta property="og:updated_time" content="2016-09-13T10:03:22.000Z">
+<meta property="og:updated_time" content="2016-09-19T04:23:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 3.0,英文文档学习记录(持续更新)">
 <meta name="twitter:description" content="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录">
@@ -141,13 +141,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -249,7 +249,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-swift-3-0-英文文档学习记录-持续更新" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -301,9 +301,15 @@
 <blockquote>
 <p>“Use struct to create a structure. Structures support many of the same behaviors as classes, including methods and initializers. One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.”<br>摘录来自: Apple Inc. “The Swift Programming Language (Swift 3)”。 iBooks. </p>
 <ol>
-<li>上面也提到结构体,其实你可以认为swift中所有类型的对象都是结构体,只是说他们各自有一些特殊的属性,枚举也是一种结构体,</li>
+<li>上面也提到结构体,其实你可以认为swift中所有类型的对象都是结构体,只是说他们各自有一些特殊的属性,枚举也是一种结构体</li>
 </ol>
 </blockquote>
+<p>————————————我是分割线—————————</p>
+<p>###线面就进入正式的部分,以上只是overview部分</p>
+<ol>
+<li>swift里面的数据类型:Int(整型),Float/Double(浮点型),Array/Set/Dictionary(集合),String(文本,字符串),Bool(布尔类型),tuples(元组,Objective-C中没有的)</li>
+<li>使用let声明常量,var声明变量,和数据类型没有关系,不需要变的你就要let,变的你就用var.使用let 和 var的时候都是可以连续声明的,比如let a = 1, b = 2, c = 3这种.无论是var还是let在’使用前’必须要初始化,不然报错,在类型注释后面加?也是初始化的一种,意思是你没指明初始值,那系统就会给你一个nil值</li>
+</ol>
 
       
     </div>
@@ -312,17 +318,17 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(持续更新)</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Yanming Fan</a></p>
-        <p><span>发布时间:</span>2016-09-09, 14:30:17</p>
-        <p><span>最后更新:</span>2016-09-13, 18:03:22</p>
+        <p><span>Title:</span><a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(持续更新)</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Yanming Fan</a></p>
+        <p><span>Created:</span>2016-09-09, 14:30:17</p>
+        <p><span>Updated:</span>2016-09-19, 12:23:24</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/" title="swift 3.0,英文文档学习记录(持续更新)">http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/" title="swift 3.0,英文文档学习记录(持续更新)">http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/</a>
+            <span class="copy-path" data-clipboard-text="From http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/　　By Yanming Fan" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
         </p>
     </div>
 
@@ -343,7 +349,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
+    <strong class="toc-title">Contents</strong>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录"><span class="toc-number">1.</span> <span class="toc-text">完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录</span></a></li></ol>
 </div>
 <style>
@@ -353,10 +359,10 @@
     }
 </style>
 
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
 <script>
-    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    yiliaConfig.toc = ["Hide", "Show", !!"false"];
 </script>
 
 
@@ -455,13 +461,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/24/iOS-那些零碎但有用的东西/" title="下一篇: iOS 那些零碎但有用的东西">
+            <a href="/2016/08/24/iOS-那些零碎但有用的东西/" title="Next: iOS 那些零碎但有用的东西">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -484,14 +490,14 @@
                 2014-2016 Yanming Fan
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >本站到访数: 
+                        <span id="site-visit" >Site Visitors: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -501,7 +507,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
+                        <span id="page-visit">Page Hits: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -534,9 +540,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
