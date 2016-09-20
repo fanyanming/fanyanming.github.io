@@ -145,13 +145,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -253,7 +253,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
   
@@ -284,8 +284,60 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h3 id="完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录"><a href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录" class="headerlink" title="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录"></a>完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录
-          
+        <h3 id="完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的-lt-—more–-gt"><a href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的-lt-—more–-gt" class="headerlink" title="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的&lt;!—more–&gt;"></a>完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的&lt;!—more–&gt;</h3><h3 id="Welcome-to-Swift"><a href="#Welcome-to-Swift" class="headerlink" title="Welcome to Swift"></a>Welcome to Swift</h3><ol>
+<li>print 用于输出,等同于OC的NSLog,但是不用占位符,不用’@‘符,一个字+一个字,清爽,不同类型的输出用逗号隔开几即可,拼接的话只需要用’+’连接即可.</li>
+<li>常量用let,变量用var,和oc的有些不同,;let修饰一些你不想变(想变也变不了)的量,哪怕是字符串什么的,而oc中,常量就指的一些类型,能不能变决定不了,比如int,oc中你随便变就是啦.总结来说:指向let声明的常量的’指针’(如果有这一说)是不能变的,而指向var声明的变量的指针是可以变的.至于这个常量或者变量的内部是否可变并不受现在,由其本身属性决定,比如:let声明的NSMutableDictionary字典是可以改变其中的值的</li>
+<li>‘?’的作用,告诉编译器,这个量的值是可选的(optional),可以包含一个值也可以为nil,如果不带’?’,又不给值,系统就会报错,让你必须初始化</li>
+<li>if 条件语句的调只能是Boolean类型,但是像’let A = B’或者是多个<code>let A = B,let B = C,...(一假则假)</code>也可以作为条件,但是B需要时optional类型的,如果为B不为空,就把B赋值给A,并且条件为ture,反之,B为空的话,就条件就为fasle,而且A就没了,对,没了</li>
+<li>switch 语句的break关键字不需要了,但是仍然要有default</li>
+<li>forin语句,如果遍历的是字典,是可以同时遍历value和key的,而且系统在编译的时候就会判断,例如你不是字典类型的元素,非要按key-value方式来判断,它就会报错</li>
+<li>类的声明中,属性必须要有一个初始值,无论是哪种方式,直接赋值,或者同过带参数init函数来初始化,反正要有,类的声明,可以是没有基类的,所以你在声明一个类时,可以不继承任何类.当然你在OC中也可以这样写,但是,但是,你在这个类就是什么方法都没有,生成器都没,但是swift中,你依然可以用()来创建,无论是父类还是子类,只要有属性没有直接赋予初始值,那么你在创建时都要传入缺少初始值的属性的值</li>
+<li>属性声明也可以自定义setter和getter方法,但是在swift中,有setter和getter的属性,一般被视为计算属性,和属性本身其实关系不大,用OC的思想可能有点费解….例如:有个A属性,有个B属性,有个C属性,C属性有setter和getter方法,C可能就是功能性,比如A和B组合的一个效果什么的sum啥的</li>
+<li>枚举,定义方式跟OC差不多,但是灵活的很多,使用范围更广,不限于整型,而且可以使用方法,用起来更贴近于自然的方式,贴近于人类的思考方式,而且每一个枚举的元素会有rawValue属性(只有在枚举声明的时候指明成员类型的才有,因为只有枚举本身有rawType的时候,枚举的成员才有rawValue),也就是你写在枚举名后面的值,不写的话会默认为枚举名,打印的时候也会以枚举名显示,OC中默认会显示rawValue,不论你写的什么GenderMan, GenderWoman,打印出来都是整型值.下面是随便写的一些枚举,是不是很灵活啊</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">enum Gender:Int &#123;</span><br><span class="line">        case GenderMale = 1</span><br><span class="line">        case GenderFemale</span><br><span class="line">        case GenderOther</span><br><span class="line">        </span><br><span class="line">        func descriptionInChinese() -&gt; String &#123;</span><br><span class="line">            switch self &#123;</span><br><span class="line">            case . GenderMale:</span><br><span class="line">                return &quot;男人&quot;</span><br><span class="line">            case . GenderFemale:</span><br><span class="line">                return &quot;女人&quot;</span><br><span class="line">            default:</span><br><span class="line">                return &quot;其他&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    enum myList: String &#123;</span><br><span class="line">        case potato = &quot;土豆&quot;</span><br><span class="line">        case drinkWater = &quot;饮用水&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>还不是看起来像是一个类的定义,只不过把class关键字换成了enum,哈哈,如果是struct就更像了,官方的说法就是,他们确实有很多相似之处,但是最大的不同就是,结构体的使用都是拷贝方式,你引用几次就拷贝几次,但是class就不同,他是真的是引用,你可以理解为,同一个对象,你在不同的地方用,其实只是用不同的指针指向它而已,可以说,class更加节省空间,附上原话,免得说我瞎扯,😁</p>
+<blockquote>
+<p>“Use struct to create a structure. Structures support many of the same behaviors as classes, including methods and initializers. One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.”<br>摘录来自: Apple Inc. “The Swift Programming Language (Swift 3)”。 iBooks. </p>
+<ol>
+<li>上面也提到结构体,其实你可以认为swift中所有类型的对象都是结构体,只是说他们各自有一些特殊的属性,枚举也是一种结构体</li>
+</ol>
+</blockquote>
+<h3 id="Language-Guide-The-Bascis"><a href="#Language-Guide-The-Bascis" class="headerlink" title="Language Guide - The Bascis"></a>Language Guide - The Bascis</h3><ol>
+<li>swift里面的数据类型:Int(整型),Float/Double(浮点型),Array/Set/Dictionary(集合),String(文本,字符串),Bool(布尔类型),tuples(元组,Objective-C中没有的)</li>
+<li>使用let声明常量,var声明变量,和数据类型没有关系,不需要变的你就要let,变的你就用var.使用let 和 var的时候都是可以连续声明的,比如let a = 1, b = 2, c = 3这种.无论是var还是let在<code>使用前</code>必须要初始化,不然报错,在类型注释后面加?也是初始化的一种(但是只适用于变量,常量声明的时候哪怕你在类型注释后加了?,你依然要在试用前给他一个初始值),意思是你没指明初始值,那系统就会给你一个nil值.常量名和变量名可以用基本上所有的东西来命名,汉字,emoji等等,但是常见的一些禁用方式,依然是禁用的,什么数字开头,空格,私有或者保留的字段,-,等等</li>
+<li>swift的注释和 Objective-C类似,但是多行注释是可以嵌套多行注释的.</li>
+<li>分号;在swift中不是必须的,你想写,也没人说你,但是如果在一行写多个语句必须用;隔开</li>
+<li>整型(signed(+,0,-)/unsigned(0,+)),常用的就是Int,系统会自动根据系统的位数来判断取值范围,当然你也可以用Int8,Int32,Int64来声明变量或常量,但是,其实不常用,如果是无符号整型,用UInt,官方推荐用Int,无论是从安全还是从效率方面.</li>
+<li>浮点型,signed浮点型包括Float(32位)和Double(64位)</li>
+<li><p>typealias,关键字,等同于type define,例如</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> <span class="type">MyInt</span> = <span class="type">Int</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Bool类型只有两个值ture 和 fasle ,这个和非0即真还是有很大区别的</p>
+</li>
+<li>Tuple,元组,swift中新增的类型,其实很像结构体,有没有<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http404Error = (<span class="number">404</span>, <span class="string">"Not Found"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>元组的元素,可以是任何类型的数据,元组在返回值是多个的时候特别有用</p>
+<ol>
+<li><p>Optionals,可选类型,这个就是之前(c或者Objective-c中)没有的,用处是,直接表现就是在类型的后面加上?,没有指明是可选类型的变量(对,变量,常量单独说),是不能被赋予nil值的,或者是,你使用这个变量的时候必须要手动初始化,但是加上这个<code>?</code>以后,你就可以不必非要手动初始化,系统会自动把它的值设为nil,还有对于未知累的结果也要带上?,防止未知的结果是空,这些注意事项,编译时都是会报错的,如果没有遵守.例如:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> possibleNumberString = “<span class="number">123</span>”</span><br><span class="line"><span class="comment">// let possibleNumberString = “hello, world”</span></span><br><span class="line"><span class="keyword">let</span> number: <span class="type">Int</span>? = <span class="type">Int</span>(possibleNumberString)<span class="comment">// </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> someString: <span class="type">String</span>?</span><br><span class="line"><span class="built_in">print</span>(someString)<span class="comment">// 不会报错,但是,不加?,系统就会报错,让你使用前初始化,其实加上?的时候系统就给了一个nil值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nil,swift中的nil可以赋值给任何对象,不限于是不是基本数据类型,因为,它并不是一个指针,它就是一个值,特殊的值,通吃的值.Objective-c中,nil是指向空的一个指针,所以,它只能赋值给实例对象</p>
+</li>
+<li>!(forced unwrapping),对, 问号说完说叹号,目前来看,直观的效果就是能带问号后对象前的optional去掉:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Optional(2)—&gt;2// !,你确定这个对象是有值的你才用,不然就会崩溃的...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Basic-Operators-基本运算符"><a href="#Basic-Operators-基本运算符" class="headerlink" title="Basic Operators(基本运算符)"></a>Basic Operators(基本运算符)</h3><ol>
+<li>其实和c和OC中的基本一致,只是需要强调的是swift中的运算式是不会反会值的,所以a = b = 1 + 3,这些写,a并不会等于4,而是啥都没,当然swift中新增了<code>===</code>和<code>!==</code>,判断两个指针是不是指像同一个实例,返回值为Bool值</li>
+<li>单独说一下元组的比较,官方举例中有一段:<br>`“Tuples are compared from left to right, one value at a time, until the comparison finds two values that aren’t equal. If all the elements are equal, then the tuples themselves are equal”翻译一下就是元组的比较是从左到右的,直到找到不相等的元素时停止比较,返回不相等的两个元素的比较结果,如果全部相等就是相等<br>举得例子:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(3, &quot;apple&quot;) &lt; (3, &quot;bird&quot;)    // true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird”</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上面的例子解析一个,3等于3,继续比较”apple”和”bird”,并且”apple”和”bird”的比较也是遵守从左到右的那个规则,a&lt;b,不相等就结束了(字符串的比较结束了,整个元组的比较也结束了),结果就是前者小于后者,那就是ture<br>这里贴一个笑话,解释为什么”bird”比”apple”大,我觉得挺有道理</p>
+<blockquote>
+<p><img src="/assets/images/2016/swiftLearning01.png" alt="joke"></p>
+</blockquote>
+
       
     </div>
     
@@ -294,10 +346,6 @@
       
 
       
-      
-        <p class="article-more-link">
-          <a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -563,14 +611,14 @@
                 2014-2016 Yanming Fan
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >本站到访数: 
+                        <span id="site-visit" >Site Visitors: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -580,7 +628,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
+                        <span id="page-visit">Page Hits: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -613,9 +661,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
