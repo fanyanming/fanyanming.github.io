@@ -284,7 +284,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的-lt-–more–-gt"><a href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的-lt-–more–-gt" class="headerlink" title="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的&lt;–more–&gt;"></a>完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的&lt;–more–&gt;</h3><h3 id="Welcome-to-Swift"><a href="#Welcome-to-Swift" class="headerlink" title="Welcome to Swift"></a>Welcome to Swift</h3><ol>
+        <h3 id="完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的"><a href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的" class="headerlink" title="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的"></a>完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的</h3><h3 id="Welcome-to-Swift-lt-–more–-gt"><a href="#Welcome-to-Swift-lt-–more–-gt" class="headerlink" title="Welcome to Swift&lt;–more–&gt;"></a>Welcome to Swift&lt;–more–&gt;</h3><ol>
 <li>print 用于输出,等同于OC的NSLog,但是不用占位符,不用’@‘符,一个字+一个字,清爽,不同类型的输出用逗号隔开几即可,拼接的话只需要用’+’连接即可.</li>
 <li>常量用let,变量用var,和oc的有些不同,;let修饰一些你不想变(想变也变不了)的量,哪怕是字符串什么的,而oc中,常量就指的一些类型,能不能变决定不了,比如int,oc中你随便变就是啦.总结来说:指向let声明的常量的’指针’(如果有这一说)是不能变的,而指向var声明的变量的指针是可以变的.<del>至于这个常量或者变量的内部是否可变并不受现在,由其本身属性决定,比如:let声明的NSMutableDictionary字典是可以改变其中的值的</del>(忽略本句,理解有混淆,不准确)</li>
 <li>‘?’的作用,告诉编译器,这个量的值是可选的(optional),可以包含一个值也可以为nil,如果不带’?’,又不给值,系统就会报错,让你必须初始化</li>
@@ -366,9 +366,28 @@ print(catString)
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`+号只适用于同类型的拼接,所以并不适用于字符和字符串`,如果想把一个字符拼接到字符串上,调用字符串的`append()`方法</span><br></pre></td></tr></table></figure>
 <p>let exclamationMark: Character = “!”<br>welcome.append(exclamationMark)<br>// welcome now equals “hello there!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6. 字符串插入的问题,/来占位插入,如下,也是很简洁,不用数长度,数位置了,直观</span><br></pre></td></tr></table></figure></p>
 <p>et messagePart = “ell”<br>let message = “h(messagePart)o,world”<br>print(message)<br>// prints “hello,world”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7. 求字符串长度依然用`characters.count`</span><br><span class="line">8. 访问字符串的特定位置的字符,就和OC中有区别了,因为swift中的每个字符的存储的空间不是一定相等的,所以不能用数字下表来访问,而是新方式:而是用`startIndex`和`endIndex`属性来确定起始位置,用`before`和`after`来表示前一个和后一个,offset表示偏移的跨度,总结起来的格式:`字符串[索引]`,越界也是会崩溃,依然是运行时崩溃</span><br></pre></td></tr></table></figure></p>
-<p>let greeting = “Guten Tag!”<br>print(greeting[greeting.startIndex])<br>// G<br>print(greeting[greeting.index(before: greeting.endIndex)])<br>// !<br>print(greeting[greeting.index(after: greeting.startIndex)])<br>// u<br>let index = greeting.index(greeting.startIndex, offsetBy: 7)<br>print(greeting[index])<br>// a<br><code>``有一点必须强调,好坑:</code>The endIndex property is the position after the last character in a String`,endIndex表示的是最后一个字符的后面(对,后面)的位置,what the xxx..,这是出于什么设计,要这么坑,不明觉厉<br>以上的访问方法(startIndex , endIndex ,index(before:), index(after:), index(_:offsetBy:)),也适用于其他集合类型的数据的访问:Array, Dictionary, and Set</p>
+<p>let greeting = “Guten Tag!”<br>print(greeting[greeting.startIndex])<br>// G<br>print(greeting[greeting.index(before: greeting.endIndex)])<br>// !<br>print(greeting[greeting.index(after: greeting.startIndex)])<br>// u<br>let index = greeting.index(greeting.startIndex, offsetBy: 7)<br>print(greeting[index])<br>// a<br><figure class="highlight plain"><figcaption><span>endIndex property is the position after the last character in a String`,endIndex表示的是最后一个字符的后面(对,后面)的位置,what the xxx..,这是出于什么设计,要这么坑,不明觉厉</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">以上的访问方法(startIndex , endIndex ,index(before:), index(after:), index(_:offsetBy:)),也适用于其他集合类型的数据的访问:Array, Dictionary, and Set</span><br><span class="line">9. 在String中插入String或者character,使用`insert(_:at:)`和`insert(contentsOf:at:)`,移除操作的话,`remove(at:)`和`removeSubrange(_:)`</span><br><span class="line">10. 字符串的章节好长,又没啥好说的,枯燥….(学习记录,真是学习记录)</span><br><span class="line">11. `hasPrefix(_:)` 和 `hasSuffix(_:)`方法返回Bool值,用来比较前缀和后缀</span><br><span class="line">12. 中间有好多Unicode的东西,这里不提了,用到的时候,结合场景再说</span><br><span class="line">### Collection Types—集合类(arrays,sets,dictionaries)</span><br><span class="line">#### Array</span><br><span class="line">1. `var threeDoubles = Array(repeating: 0.0, count: 3)`新玩意,表示[0.0, 0.0, 0.0]</span><br><span class="line">2. 其他的用法和OC中大抵是一致的,可以直接用小标访问或者改变元素,哪怕替换时数量不一样,但是下标依然不能越界,你不能在有2个元素的数组中,以someArray[2] = “last”的方式添加元素,反正下标不能越界就对了</span><br><span class="line">3. 数组的拼接和插入:`append()`和`insert(_:at:)`方法,前者直接放到最后,后者会排放到你指定的位置,这里要`强调`一点的,insert方法,执行过程就是先把元素插进去,再摆放,所以插入的位置最大值等于最大索引+1,你要是插入一个数组,也是适用的</span><br></pre></td></tr></table></figure></p>
+<pre><code>var shoppingList = [&quot;egg&quot;, &quot;milk&quot;,&quot;vegetable&quot;]
+shoppingList.insert(contentsOf: [&quot;union&quot;, &quot;potato&quot;], at: 3)// 原数组最大索引为2,我插入的位置是3也是对的
+
+print(shoppingList)
+
+var shoppingList1: [Any] = [1,&quot;egg&quot;,&quot;milk&quot;]
+shoppingList1.append(shoppingList)
+shoppingList1.insert(2, at: 4)
+print(shoppingList1)
+</code></pre><p>```</p>
 <ol>
-<li>在String中插入String或者character,使用<code>insert(_:at:)</code>和<code>insert(contentsOf:at:)</code>,移除操作的话,<code>remove(at:)</code>和<code>removeSubrange(_:)</code><br>10.字符串的章节好长,又没啥好说的,枯燥….(学习记录,真是学习记录)</li>
+<li>移除的话<code>remove(at:)</code>即可,这个方法是有返回值的,返回被移除的元素,很好用.还有其他直观的移除方法,可以直接Xcode查看,很easy的</li>
+<li>遍历数组的,可以用for-in方法,如果想有索引的话,只需要遍历的数组是<code>shoppingList1.enumerated()</code>即可,<code>shoppingList1.enumerated</code>会返回一个(n,x)对,n是索引,x元素</li>
+</ol>
+<h4 id="Set-无序的数组"><a href="#Set-无序的数组" class="headerlink" title="Set- 无序的数组"></a>Set- 无序的数组</h4><ol>
+<li>Set很大一个特点就是它里面的元素都是不一样的,所以你可以运用Set来过滤掉数组里面重复而且你不需要的值,因为Set是无序的,所以,索引也就不适用了,插入,删除什么的直接操作你想操作的元素就行,因为没有重复的</li>
+<li>遍历.for-in,<code>.sorted()</code>会生成一个排了序的数组,从小到大</li>
+<li>下面四个方法,我觉得很好很实用,一张图搞定<blockquote>
+<p><img src="/assets/images/2016/swiftLearning02.png" alt="set相关方法"></p>
+</blockquote>
+</li>
 </ol>
 
       
