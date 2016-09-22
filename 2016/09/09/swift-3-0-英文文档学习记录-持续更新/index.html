@@ -26,7 +26,8 @@ print 用于输出,等同于OC的NSLog,但是不用占位符,不用’@‘符,�
 print 用于输出,等同于OC的NSLog,但是不用占位符,不用’@‘符,一个字+一个字,清爽,不同类型的输出用逗号隔开几即可,拼接的话只需要用’+’连接即可.
 常量用let,">
 <meta property="og:image" content="http://fanyanming/fanyanming.github.io/assets/images/2016/swiftLearning01.png">
-<meta property="og:updated_time" content="2016-09-22T10:07:11.000Z">
+<meta property="og:image" content="http://fanyanming/fanyanming.github.io/assets/images/2016/swiftLearning02.png">
+<meta property="og:updated_time" content="2016-09-22T10:10:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 3.0,英文文档学习记录(to self)(持续更新)">
 <meta name="twitter:description" content="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的Welcome to Swift&amp;lt;–more–&amp;gt;
@@ -149,13 +150,13 @@ print 用于输出,等同于OC的NSLog,但是不用占位符,不用’@‘符,�
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜單</li>
+                        <li>標籤</li>
                         
-                        <li>Friends</li>
+                        <li>友情鏈接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>關於我</li>
                         
                     </ul>
                 </div>
@@ -257,7 +258,7 @@ print 用于输出,等同于OC的NSLog,但是不用占位符,不用’@‘符,�
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
 </nav>
       <div class="body-wrap"><article id="post-swift-3-0-英文文档学习记录-持续更新" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -375,19 +376,25 @@ print(catString)
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`+号只适用于同类型的拼接,所以并不适用于字符和字符串`,如果想把一个字符拼接到字符串上,调用字符串的`append()`方法</span><br></pre></td></tr></table></figure>
 <p>let exclamationMark: Character = “!”<br>welcome.append(exclamationMark)<br>// welcome now equals “hello there!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6. 字符串插入的问题,/来占位插入,如下,也是很简洁,不用数长度,数位置了,直观</span><br></pre></td></tr></table></figure></p>
 <p>et messagePart = “ell”<br>let message = “h(messagePart)o,world”<br>print(message)<br>// prints “hello,world”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7. 求字符串长度依然用`characters.count`</span><br><span class="line">8. 访问字符串的特定位置的字符,就和OC中有区别了,因为swift中的每个字符的存储的空间不是一定相等的,所以不能用数字下表来访问,而是新方式:而是用`startIndex`和`endIndex`属性来确定起始位置,用`before`和`after`来表示前一个和后一个,offset表示偏移的跨度,总结起来的格式:`字符串[索引]`,越界也是会崩溃,依然是运行时崩溃</span><br></pre></td></tr></table></figure></p>
-<p>let greeting = “Guten Tag!”<br>print(greeting[greeting.startIndex])<br>// G<br>print(greeting[greeting.index(before: greeting.endIndex)])<br>// !<br>print(greeting[greeting.index(after: greeting.startIndex)])<br>// u<br>let index = greeting.index(greeting.startIndex, offsetBy: 7)<br>print(greeting[index])<br>// a<br><figure class="highlight plain"><figcaption><span>endIndex property is the position after the last character in a String`,endIndex表示的是最后一个字符的后面(对,后面)的位置,what the xxx..,这是出于什么设计,要这么坑,不明觉厉</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">以上的访问方法(startIndex , endIndex ,index(before:), index(after:), index(_:offsetBy:)),也适用于其他集合类型的数据的访问:Array, Dictionary, and Set</span><br><span class="line">9. 在String中插入String或者character,使用`insert(_:at:)`和`insert(contentsOf:at:)`,移除操作的话,`remove(at:)`和`removeSubrange(_:)`</span><br><span class="line">10. 字符串的章节好长,又没啥好说的,枯燥….(学习记录,真是学习记录)</span><br><span class="line">11. `hasPrefix(_:)` 和 `hasSuffix(_:)`方法返回Bool值,用来比较前缀和后缀</span><br><span class="line">12. 中间有好多Unicode的东西,这里不提了,用到的时候,结合场景再说</span><br><span class="line">### Collection Types—集合类(arrays,sets,dictionaries)</span><br><span class="line">#### Array</span><br><span class="line">1. `var threeDoubles = Array(repeating: 0.0, count: 3)`新玩意,表示[0.0, 0.0, 0.0]</span><br><span class="line">2. 其他的用法和OC中大抵是一致的,可以直接用小标访问或者改变元素,哪怕替换时数量不一样,但是下标依然不能越界,你不能在有2个元素的数组中,以someArray[2] = “last”的方式添加元素,反正下标不能越界就对了</span><br><span class="line">3. 数组的拼接和插入:`append()`和`insert(_:at:)`方法,前者直接放到最后,后者会排放到你指定的位置,这里要`强调`一点的,insert方法,执行过程就是先把元素插进去,再摆放,所以插入的位置最大值等于最大索引+1,你要是插入一个数组,也是适用的</span><br></pre></td></tr></table></figure></p>
-<pre><code>var shoppingList = [&quot;egg&quot;, &quot;milk&quot;,&quot;vegetable&quot;]
-shoppingList.insert(contentsOf: [&quot;union&quot;, &quot;potato&quot;], at: 3)// 原数组最大索引为2,我插入的位置是3也是对的
-
-print(shoppingList)
-
-var shoppingList1: [Any] = [1,&quot;egg&quot;,&quot;milk&quot;]
-shoppingList1.append(shoppingList)
-shoppingList1.insert(2, at: 4)
-print(shoppingList1)
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">4. 移除的话`remove(at:)`即可,这个方法是有返回值的,返回被移除的元素,很好用.还有其他直观的移除方法,可以直接Xcode查看,很easy的</span><br><span class="line">5. 遍历数组的,可以用for-in方法,如果想有索引的话,只需要遍历的数组是`shoppingList1.enumerated()`即可,`shoppingList1.enumerated`会返回一个(n,x)对,n是索引,x元素</span><br><span class="line"></span><br><span class="line">#### Set- 无序的数组</span><br><span class="line">1. Set很大一个特点就是它里面的元素都是不一样的,所以你可以运用Set来过滤掉数组里面重复而且你不需要的值,因为Set是无序的,所以,索引也就不适用了,插入,删除什么的直接操作你想操作的元素就行,因为没有重复的</span><br><span class="line">2. 遍历.for-in,`.sorted()`会生成一个排了序的数组,从小到大</span><br><span class="line">3. 下面四个方法,我觉得很好很实用,一张图搞定</span><br><span class="line">&gt;![set相关方法](/assets/images/2016/swiftLearning02.png)</span><br><span class="line">#### Dictionary - 字典</span><br><span class="line">1. 第一变化,swift中的集合同意用`[]`来表示,不会再有`&#123;&#125;`单独来表示字典一说,这样就简洁(swift最直观的印象词)很多.</span><br><span class="line">2. Dictionary类型的使用中有一个`updateValue(_:forKey:)`方法,这个方法会返回更新之前的值,如果有的话,所以它是一个可选类型的值,是个带`?`的值</span><br><span class="line">3. 访问某个键值对是,无论是键值对不存在,还是单纯的不存在值,都会返回一个nil值,存在的话就会返回一个带optional的值,代码演示如下:</span><br></pre></td></tr></table></figure>
-<p>var myDic = [1: “one”, 2: “two”]<br>myDic[3] = “three”<br>if let value = myDic[3] {<br>   print(myDic[3])<br>   print(value)<br>   print(myDic[3]!)<br> }<br>/<em><br>Optional(“three”)<br>three<br>three
-</em>/<br>```</p>
+<p>let greeting = “Guten Tag!”<br>print(greeting[greeting.startIndex])<br>// G<br>print(greeting[greeting.index(before: greeting.endIndex)])<br>// !<br>print(greeting[greeting.index(after: greeting.startIndex)])<br>// u<br>let index = greeting.index(greeting.startIndex, offsetBy: 7)<br>print(greeting[index])<br>// a<br><figure class="highlight plain"><figcaption><span>endIndex property is the position after the last character in a String`,endIndex表示的是最后一个字符的后面(对,后面)的位置,what the xxx..,这是出于什么设计,要这么坑,不明觉厉</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">以上的访问方法(startIndex , endIndex ,index(before:), index(after:), index(_:offsetBy:)),也适用于其他集合类型的数据的访问:Array, Dictionary, and Set</span><br><span class="line">9. 在String中插入String或者character,使用`insert(_:at:)`和`insert(contentsOf:at:)`,移除操作的话,`remove(at:)`和`removeSubrange(_:)`</span><br><span class="line">10. 字符串的章节好长,又没啥好说的,枯燥….(学习记录,真是学习记录)</span><br><span class="line">11. `hasPrefix(_:)` 和 `hasSuffix(_:)`方法返回Bool值,用来比较前缀和后缀</span><br><span class="line">12. 中间有好多Unicode的东西,这里不提了,用到的时候,结合场景再说</span><br><span class="line">### Collection Types—集合类(arrays,sets,dictionaries)</span><br><span class="line">#### Array</span><br><span class="line">1. `var threeDoubles = Array(repeating: 0.0, count: 3)`新玩意,表示[0.0, 0.0, 0.0]</span><br><span class="line">2. 其他的用法和OC中大抵是一致的,可以直接用小标访问或者改变元素,哪怕替换时数量不一样,但是下标依然不能越界,你不能在有2个元素的数组中,以someArray[2] = “last”的方式添加元素,反正下标不能越界就对了</span><br><span class="line">3. 数组的拼接和插入:`append()`和`insert(_:at:)`方法,前者直接放到最后,后者会排放到你指定的位置,这里要`强调`一点的,insert方法,执行过程就是先把元素插进去,再摆放,所以插入的位置最大值等于最大索引+1,你要是插入一个数组,也是适用的</span><br><span class="line">```var shoppingList = [&quot;egg&quot;, &quot;milk&quot;,&quot;vegetable&quot;]</span><br><span class="line">        shoppingList.insert(contentsOf: [&quot;union&quot;, &quot;potato&quot;], at: 3)// 原数组最大索引为2,我插入的位置是3也是对的</span><br><span class="line">        </span><br><span class="line">        print(shoppingList)</span><br><span class="line">        </span><br><span class="line">        var shoppingList1: [Any] = [1,&quot;egg&quot;,&quot;milk&quot;]</span><br><span class="line">        shoppingList1.append(shoppingList)</span><br><span class="line">        shoppingList1.insert(2, at: 4)</span><br><span class="line">        print(shoppingList1)</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>移除的话<code>remove(at:)</code>即可,这个方法是有返回值的,返回被移除的元素,很好用.还有其他直观的移除方法,可以直接Xcode查看,很easy的</li>
+<li>遍历数组的,可以用for-in方法,如果想有索引的话,只需要遍历的数组是<code>shoppingList1.enumerated()</code>即可,<code>shoppingList1.enumerated</code>会返回一个(n,x)对,n是索引,x元素</li>
+</ol>
+<h4 id="Set-无序的数组"><a href="#Set-无序的数组" class="headerlink" title="Set- 无序的数组"></a>Set- 无序的数组</h4><ol>
+<li>Set很大一个特点就是它里面的元素都是不一样的,所以你可以运用Set来过滤掉数组里面重复而且你不需要的值,因为Set是无序的,所以,索引也就不适用了,插入,删除什么的直接操作你想操作的元素就行,因为没有重复的</li>
+<li>遍历.for-in,<code>.sorted()</code>会生成一个排了序的数组,从小到大</li>
+<li>下面四个方法,我觉得很好很实用,一张图搞定<blockquote>
+<p><img src="/assets/images/2016/swiftLearning02.png" alt="set相关方法"></p>
+</blockquote>
+</li>
+</ol>
+<h4 id="Dictionary-字典"><a href="#Dictionary-字典" class="headerlink" title="Dictionary - 字典"></a>Dictionary - 字典</h4><ol>
+<li>第一变化,swift中的集合同意用<code>[]</code>来表示,不会再有<code>{}</code>单独来表示字典一说,这样就简洁(swift最直观的印象词)很多.</li>
+<li>Dictionary类型的使用中有一个<code>updateValue(_:forKey:)</code>方法,这个方法会返回更新之前的值,如果有的话,所以它是一个可选类型的值,是个带<code>?</code>的值</li>
+<li>访问某个键值对是,无论是键值对不存在,还是单纯的不存在值,都会返回一个nil值,存在的话就会返回一个带optional的值,代码演示如下:<figure class="highlight plain"><figcaption><span>myDic = [1: "one", 2: "two"]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">myDic[3] = &quot;three&quot;</span><br><span class="line">if let value = myDic[3] &#123;</span><br><span class="line">   print(myDic[3])</span><br><span class="line">   print(value)</span><br><span class="line">   print(myDic[3]!)</span><br><span class="line"> &#125;</span><br><span class="line">/*</span><br><span class="line">Optional(&quot;three&quot;)</span><br><span class="line">three</span><br><span class="line">three</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -396,17 +403,17 @@ print(shoppingList1)
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(to self)(持续更新)</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">Yanming Fan</a></p>
-        <p><span>Created:</span>2016-09-09, 14:30:17</p>
-        <p><span>Updated:</span>2016-09-22, 18:07:11</p>
+        <p><span>本文標題:</span><a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(to self)(持续更新)</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主頁">Yanming Fan</a></p>
+        <p><span>發布時間:</span>2016-09-09, 14:30:17</p>
+        <p><span>最後更新:</span>2016-09-22, 18:10:10</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/" title="swift 3.0,英文文档学习记录(to self)(持续更新)">http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/</a>
-            <span class="copy-path" data-clipboard-text="From http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/　　By Yanming Fan" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>原始鏈接:</span><a class="post-url" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/" title="swift 3.0,英文文档学习记录(to self)(持续更新)">http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/　　作者: Yanming Fan" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
         </p>
     </div>
 
@@ -427,8 +434,8 @@ print(shoppingList1)
 </article>
 
     <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的"><span class="toc-number">1.</span> <span class="toc-text">完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Welcome-to-Swift-lt-–more–-gt"><span class="toc-number">2.</span> <span class="toc-text">Welcome to Swift<–more–></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language-Guide-The-Bascis"><span class="toc-number">3.</span> <span class="toc-text">Language Guide - The Bascis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Operators-基本运算符"><span class="toc-number">4.</span> <span class="toc-text">Basic Operators(基本运算符)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Strings-and-Characters"><span class="toc-number">5.</span> <span class="toc-text">Strings and Characters</span></a></li></ol>
+    <strong class="toc-title">文章目錄</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的"><span class="toc-number">1.</span> <span class="toc-text">完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Welcome-to-Swift-lt-–more–-gt"><span class="toc-number">2.</span> <span class="toc-text">Welcome to Swift<–more–></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language-Guide-The-Bascis"><span class="toc-number">3.</span> <span class="toc-text">Language Guide - The Bascis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Operators-基本运算符"><span class="toc-number">4.</span> <span class="toc-text">Basic Operators(基本运算符)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Strings-and-Characters"><span class="toc-number">5.</span> <span class="toc-text">Strings and Characters</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Set-无序的数组"><span class="toc-number">5.1.</span> <span class="toc-text">Set- 无序的数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dictionary-字典"><span class="toc-number">5.2.</span> <span class="toc-text">Dictionary - 字典</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
@@ -437,10 +444,10 @@ print(shoppingList1)
     }
 </style>
 
-<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+<input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
 
 <script>
-    yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    yiliaConfig.toc = ["隱藏目錄", "顯示目錄", !!"false"];
 </script>
 
 
@@ -539,13 +546,13 @@ print(shoppingList1)
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/" title="回到主頁"><i class="fa fa-home"></i></a>
         
 
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/24/iOS-那些零碎但有用的东西/" title="Next: iOS 那些零碎但有用的东西">
+            <a href="/2016/08/24/iOS-那些零碎但有用的东西/" title="下一篇: iOS 那些零碎但有用的东西">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -568,14 +575,14 @@ print(shoppingList1)
                 2014-2016 Yanming Fan
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、簡單且強大的網誌框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄網誌主題  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >Site Visitors: 
+                        <span id="site-visit" >本站到訪數: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -585,7 +592,7 @@ print(shoppingList1)
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">Page Hits: 
+                        <span id="page-visit">本頁閱讀量: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -618,9 +625,9 @@ print(shoppingList1)
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
