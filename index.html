@@ -257,6 +257,124 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/29/test/" class="article-date">
+      <time datetime="2016-12-29T02:23:11.000Z" itemprop="datePublished">2016-12-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/29/test/">test</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-小程序上手记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/07/小程序上手记录/" class="article-date">
+      <time datetime="2016-11-07T08:36:41.000Z" itemprop="datePublished">2016-11-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/07/小程序上手记录/">小程序上手记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>####只记录,不论对错,错了就改,毕竟小白</p>
+<ol>
+<li>小程序又三个文件构成,分别是<code>app.js(程序逻辑,必需)</code>, <code>app.json(程序公共设置,必需)</code>, <code>app.wxxs(公共样式,非必需)</code>,这三个是必须要放在根目录下</li>
+<li>小程序是又页面来展示的,而每个页面又是由四个文件组成, 分别以.js(页面逻辑, 必需), .wxml(页面结构, 必需), .wxss(页面样式, 非必需), .json(页面配置, 非必需)组成</li>
+<li>两者的构成文件其实是一样的, 有人说页面的构成多一个, 或者说app的文件少了一个页面的结构, 那是因为app是有page构成, 它并不需要自己的页面结构.</li>
+<li>.js,放函数的, .wxml写UI的,.wxss定义约束的,.json,整个页面的一些属性,标题啊什么的.</li>
+<li>所有你要展示的界面都要在 app.json中注册,这一点就跟你写oc要导入头文件一样,不然系统不知道这玩意是啥,在哪.</li>
+<li>小程序中的导航栏是tab是在app.json中的设置的,位置是系统默认的,样式也是,你不需要单独来写,但是是可以修改这些样式,图片啊,背景啊,颜色啊,等等.定义的时候最少2个,最多5个.</li>
+<li>tabbar的每一个tab对应一个页面,写上路径即可</li>
+<li>注册程序调用App()函数,同理注册页面用Page(),相关的函数,出事数据都是在对应的小括号里进行的,如果进行类比的,你可以理解成OC中的类方法的实现部分,就是.m文件,里面可以写属性,可以写方法,格式要简单一些而已.所以它也会有一些自己的生命周期的回调方法,你可以在各自的方法中监听,做相应的处理.getApp()方法可以在任意页面中调用,相当于OC中的单例,但是在有些方法中是不可以调用的(参考官方文档),类比的话就是避免循环引用,比如getApp()会调用someFunction()方法,你又在someFunction()中调用getApp(),那不就出事了的,是吧..</li>
+<li>小程序的作用域,我感觉和OC是差不多的,.js中定义的方法,只能在相同的文件(夹)下使用,所以不同的文件下可以同名,</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-swift-3-0-英文文档学习记录-持续更新" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -403,7 +521,12 @@ print(catString)
 <li>访问某个键值对是,无论是键值对不存在,还是单纯的不存在值,都会返回一个nil值,存在的话就会返回一个带optional的值,代码演示如下:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var myDic = [1: &quot;one&quot;, 2: &quot;two&quot;]</span><br><span class="line">myDic[3] = &quot;three&quot;</span><br><span class="line">if let value = myDic[3] &#123;</span><br><span class="line">   print(myDic[3])</span><br><span class="line">   print(value)</span><br><span class="line">   print(myDic[3]!)</span><br><span class="line"> &#125;</span><br><span class="line">/*</span><br><span class="line">Optional(&quot;three&quot;)</span><br><span class="line">three</span><br><span class="line">three</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-
+<h4 id="Control-Flow"><a href="#Control-Flow" class="headerlink" title="Control Flow"></a>Control Flow</h4><ol>
+<li>while ,repeat while (可参考do while),没什么变化,不在详解</li>
+<li>if switch ,这里说下switch,还之前相比较,不用再写break了,之前不写break的时候会穿透到下一语句执行,但是swift中就不可以这这样写,会报错,想写包含多种情况的语句,直接写在一起,用逗号隔开即可(条件很多很长的可以换行的),当然最好用的是,可以这样写:点和范围可以共存,这在c和oc中是不可以的<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">let approximateCount = 62</span><br><span class="line">let countedThings = "moons orbiting Saturn"</span><br><span class="line">var naturalCount: String</span><br><span class="line">switch approximateCount &#123;</span><br><span class="line">case 0:</span><br><span class="line">    naturalCount = "no"</span><br><span class="line">case 1..&lt;5:</span><br><span class="line">    naturalCount = "a few"</span><br><span class="line">case 5..&lt;12:</span><br><span class="line">    naturalCount = "several"</span><br><span class="line">case 12..&lt;100:</span><br><span class="line">    naturalCount = "dozens of"</span><br><span class="line">case 100..&lt;1000:</span><br><span class="line">    naturalCount = "hundreds of"</span><br><span class="line">default:</span><br><span class="line">    naturalCount = "many”</span><br><span class="line">&#125;</span><br><span class="line">print("There are \(naturalCount) \(countedThings)."</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="元组-Tuple-多元的组😝"><a href="#元组-Tuple-多元的组😝" class="headerlink" title="元组(Tuple),多元的组😝"></a>元组(Tuple),多元的组😝</h4>
       
     </div>
     
@@ -470,7 +593,7 @@ print(catString)
       
       
         <p class="article-more-link">
-          <a href="/2016/08/24/iOS-那些零碎但有用的东西/#more">阅读全文 >></a>
+          <a href="/2016/08/24/iOS-那些零碎但有用的东西/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -530,7 +653,7 @@ print(catString)
       
       
         <p class="article-more-link">
-          <a href="/2016/06/24/block一些简单的用法总结/#more">阅读全文 >></a>
+          <a href="/2016/06/24/block一些简单的用法总结/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -590,7 +713,7 @@ print(catString)
       
       
         <p class="article-more-link">
-          <a href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/#more">阅读全文 >></a>
+          <a href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -648,7 +771,7 @@ print(catString)
       
       
         <p class="article-more-link">
-          <a href="/2016/06/21/hexo-github-搭建个人博客简述/#more">阅读全文 >></a>
+          <a href="/2016/06/21/hexo-github-搭建个人博客简述/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

@@ -27,7 +27,7 @@ print 用于输出,等同于OC的NSLog,但是不用占位符,不用’@‘符,�
 常量用let,">
 <meta property="og:image" content="http://fanyanming/fanyanming.github.io/assets/images/2016/swiftLearning01.png">
 <meta property="og:image" content="http://fanyanming/fanyanming.github.io/assets/images/2016/swiftLearning02.png">
-<meta property="og:updated_time" content="2016-09-22T10:20:03.000Z">
+<meta property="og:updated_time" content="2016-11-09T02:16:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 3.0,英文文档学习记录(to self)(持续更新)">
 <meta name="twitter:description" content="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的Welcome to Swift&amp;lt;–more–&amp;gt;
@@ -413,7 +413,12 @@ print(catString)
 <li>访问某个键值对是,无论是键值对不存在,还是单纯的不存在值,都会返回一个nil值,存在的话就会返回一个带optional的值,代码演示如下:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var myDic = [1: &quot;one&quot;, 2: &quot;two&quot;]</span><br><span class="line">myDic[3] = &quot;three&quot;</span><br><span class="line">if let value = myDic[3] &#123;</span><br><span class="line">   print(myDic[3])</span><br><span class="line">   print(value)</span><br><span class="line">   print(myDic[3]!)</span><br><span class="line"> &#125;</span><br><span class="line">/*</span><br><span class="line">Optional(&quot;three&quot;)</span><br><span class="line">three</span><br><span class="line">three</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-
+<h4 id="Control-Flow"><a href="#Control-Flow" class="headerlink" title="Control Flow"></a>Control Flow</h4><ol>
+<li>while ,repeat while (可参考do while),没什么变化,不在详解</li>
+<li>if switch ,这里说下switch,还之前相比较,不用再写break了,之前不写break的时候会穿透到下一语句执行,但是swift中就不可以这这样写,会报错,想写包含多种情况的语句,直接写在一起,用逗号隔开即可(条件很多很长的可以换行的),当然最好用的是,可以这样写:点和范围可以共存,这在c和oc中是不可以的<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">let approximateCount = 62</span><br><span class="line">let countedThings = "moons orbiting Saturn"</span><br><span class="line">var naturalCount: String</span><br><span class="line">switch approximateCount &#123;</span><br><span class="line">case 0:</span><br><span class="line">    naturalCount = "no"</span><br><span class="line">case 1..&lt;5:</span><br><span class="line">    naturalCount = "a few"</span><br><span class="line">case 5..&lt;12:</span><br><span class="line">    naturalCount = "several"</span><br><span class="line">case 12..&lt;100:</span><br><span class="line">    naturalCount = "dozens of"</span><br><span class="line">case 100..&lt;1000:</span><br><span class="line">    naturalCount = "hundreds of"</span><br><span class="line">default:</span><br><span class="line">    naturalCount = "many”</span><br><span class="line">&#125;</span><br><span class="line">print("There are \(naturalCount) \(countedThings)."</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="元组-Tuple-多元的组😝"><a href="#元组-Tuple-多元的组😝" class="headerlink" title="元组(Tuple),多元的组😝"></a>元组(Tuple),多元的组😝</h4>
       
     </div>
     
@@ -424,7 +429,7 @@ print(catString)
         <p><span>本文标题:</span><a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(to self)(持续更新)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Yanming Fan</a></p>
         <p><span>发布时间:</span>2016-09-09, 14:30:17</p>
-        <p><span>最后更新:</span>2016-09-22, 18:20:03</p>
+        <p><span>最后更新:</span>2016-11-09, 10:16:50</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/" title="swift 3.0,英文文档学习记录(to self)(持续更新)">http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/</a>
             <span class="copy-path" data-clipboard-text="原文: http://fanyanming/fanyanming.github.io/2016/09/09/swift-3-0-英文文档学习记录-持续更新/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -438,6 +443,12 @@ print(catString)
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/11/07/小程序上手记录/">
+                    小程序上手记录
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -453,7 +464,7 @@ print(catString)
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的"><span class="toc-number">1.</span> <span class="toc-text">完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Welcome-to-Swift-lt-–more–-gt"><span class="toc-number">2.</span> <span class="toc-text">Welcome to Swift<–more–></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language-Guide-The-Bascis"><span class="toc-number">3.</span> <span class="toc-text">Language Guide - The Bascis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Operators-基本运算符"><span class="toc-number">4.</span> <span class="toc-text">Basic Operators(基本运算符)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Strings-and-Characters"><span class="toc-number">5.</span> <span class="toc-text">Strings and Characters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collection-Types—集合类-arrays-sets-dictionaries"><span class="toc-number">6.</span> <span class="toc-text">Collection Types—集合类(arrays,sets,dictionaries)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Array"><span class="toc-number">6.1.</span> <span class="toc-text">Array</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Set-无序的数组"><span class="toc-number">6.2.</span> <span class="toc-text">Set- 无序的数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dictionary-字典"><span class="toc-number">6.3.</span> <span class="toc-text">Dictionary - 字典</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的"><span class="toc-number">1.</span> <span class="toc-text">完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Welcome-to-Swift-lt-–more–-gt"><span class="toc-number">2.</span> <span class="toc-text">Welcome to Swift<–more–></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language-Guide-The-Bascis"><span class="toc-number">3.</span> <span class="toc-text">Language Guide - The Bascis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Operators-基本运算符"><span class="toc-number">4.</span> <span class="toc-text">Basic Operators(基本运算符)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Strings-and-Characters"><span class="toc-number">5.</span> <span class="toc-text">Strings and Characters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collection-Types—集合类-arrays-sets-dictionaries"><span class="toc-number">6.</span> <span class="toc-text">Collection Types—集合类(arrays,sets,dictionaries)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Array"><span class="toc-number">6.1.</span> <span class="toc-text">Array</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Set-无序的数组"><span class="toc-number">6.2.</span> <span class="toc-text">Set- 无序的数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dictionary-字典"><span class="toc-number">6.3.</span> <span class="toc-text">Dictionary - 字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Control-Flow"><span class="toc-number">6.4.</span> <span class="toc-text">Control Flow</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#元组-Tuple-多元的组😝"><span class="toc-number">6.5.</span> <span class="toc-text">元组(Tuple),多元的组😝</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
@@ -564,7 +575,9 @@ print(catString)
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/11/07/小程序上手记录/" title="上一篇: 小程序上手记录">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -576,7 +589,7 @@ print(catString)
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(to self)(持续更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/24/iOS-那些零碎但有用的东西/">iOS 那些零碎但有用的东西</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/24/block一些简单的用法总结/">block一些简单的用法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/">深拷贝和浅拷贝,可变和不可变的一点点心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/21/hexo-github-搭建个人博客简述/">hexo + github 搭建个人博客简述</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/12/29/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/07/小程序上手记录/">小程序上手记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(to self)(持续更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/24/iOS-那些零碎但有用的东西/">iOS 那些零碎但有用的东西</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/24/block一些简单的用法总结/">block一些简单的用法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/">深拷贝和浅拷贝,可变和不可变的一点点心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/21/hexo-github-搭建个人博客简述/">hexo + github 搭建个人博客简述</a></li></ul>
 
 
 
