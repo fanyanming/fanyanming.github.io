@@ -15,16 +15,22 @@
 
 
 
-<meta name="description">
+<meta name="description" content="语法
+脚本开始和结尾:&amp;lt;?php ?&amp;gt;
+声明变量用’$’开头,命名风格和OC相似, 变量的作用域分为全局和局部,在函数外声明的变量为全局变量, 函数内部声明的变量为局部变量, 与OC不同的是全局变量是不能直接在函数内部访问的, 除非在要访问的全局变量之前加上global关键字修饰. 顺便提到另外一个关键字’static’,它的作用就是能让局部变量不会在函数执行完毕后被删除.’特别指出的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://fanyanming/fanyanming.github.io/2016/12/29/test/index.html">
+<meta property="og:title" content="php学习记录">
+<meta property="og:url" content="http://fanyanming/fanyanming.github.io/2017/02/15/php学习记录/index.html">
 <meta property="og:site_name" content="Yanming’s blog">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-12-29T02:23:11.000Z">
+<meta property="og:description" content="语法
+脚本开始和结尾:&amp;lt;?php ?&amp;gt;
+声明变量用’$’开头,命名风格和OC相似, 变量的作用域分为全局和局部,在函数外声明的变量为全局变量, 函数内部声明的变量为局部变量, 与OC不同的是全局变量是不能直接在函数内部访问的, 除非在要访问的全局变量之前加上global关键字修饰. 顺便提到另外一个关键字’static’,它的作用就是能让局部变量不会在函数执行完毕后被删除.’特别指出的">
+<meta property="og:updated_time" content="2017-02-23T03:49:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description">
+<meta name="twitter:title" content="php学习记录">
+<meta name="twitter:description" content="语法
+脚本开始和结尾:&amp;lt;?php ?&amp;gt;
+声明变量用’$’开头,命名风格和OC相似, 变量的作用域分为全局和局部,在函数外声明的变量为全局变量, 函数内部声明的变量为局部变量, 与OC不同的是全局变量是不能直接在函数内部访问的, 除非在要访问的全局变量之前加上global关键字修饰. 顺便提到另外一个关键字’static’,它的作用就是能让局部变量不会在函数执行完毕后被删除.’特别指出的">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>test | Yanming’s blog</title>
+<title>php学习记录 | Yanming’s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -251,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-php学习记录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/12/29/test/" class="article-date">
-      <time datetime="2016-12-29T02:23:11.000Z" itemprop="datePublished">2016-12-29</time>
+      <a href="/2017/02/15/php学习记录/" class="article-date">
+      <time datetime="2017-02-15T07:02:04.000Z" itemprop="datePublished">2017-02-15</time>
 </a>
     </div>
   
@@ -268,7 +274,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      php学习记录
     </h1>
   
 
@@ -285,7 +291,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><ol>
+<li>脚本开始和结尾:&lt;?php ?&gt;</li>
+<li>声明变量用’$’开头,命名风格和OC相似, 变量的作用域分为全局和局部,在函数外声明的变量为全局变量, 函数内部声明的变量为局部变量, 与OC不同的是全局变量是不能直接在函数内部访问的, 除非在要访问的全局变量之前加上global关键字修饰. 顺便提到另外一个关键字’static’,它的作用就是能让局部变量不会在函数执行完毕后被删除.’特别指出的是$符号并不是声明的时候才使用,而是只要是变量,这个符号一直伴随’</li>
+<li>PHP的两种输出方法: 1&gt;echo 2&gt;print;前者可以输出多个字符串,后者只能输出一个字符串,前者没有任何返回值,后者始终返回 1;</li>
+<li>php的数据类型: 字符串、整数、浮点数、逻辑(true和false)、数组、对象(类比OC的话感觉就是字典)、NULL(注:var_dump() 会返回变量的数据类型和值), </li>
+<li>字符串相关的函数:<br>1&gt;计算长度:strlen()<br>2&gt;计算摸个字符串的位置:strpos(),如果未找到返回false</li>
+<li>函数:<br>1&gt;. 形式:function funtionName() {</li>
+</ol>
+<p>}<br>2&gt;. 参数,就放括号里面即可, 需要注意的是默认参数:&lt;?php<br>function setHeight($minheight=50) {<br>  echo “The height is : $minheight <br>“;<br>}</p>
+<p>setHeight(350);<br>setHeight(); // 将使用默认值 50<br>setHeight(135);<br>setHeight(80);<br>?&gt;<br>这里的例子就会在没有传参的时候用上50这个默认值<br>3&gt;. 函数有返回值的时候,使用return即可,不用在函数声明的时候特意指出,OC的函数是需要的特别指明的</p>
+
       
     </div>
     
@@ -293,13 +309,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/12/29/test/">test</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/15/php学习记录/">php学习记录</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Yanming Fan</a></p>
-        <p><span>发布时间:</span>2016-12-29, 10:23:11</p>
-        <p><span>最后更新:</span>2016-12-29, 10:23:11</p>
+        <p><span>发布时间:</span>2017-02-15, 15:02:04</p>
+        <p><span>最后更新:</span>2017-02-23, 11:49:06</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/12/29/test/" title="test">http://fanyanming/fanyanming.github.io/2016/12/29/test/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://fanyanming/fanyanming.github.io/2016/12/29/test/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/15/php学习记录/" title="php学习记录">http://fanyanming/fanyanming.github.io/2017/02/15/php学习记录/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://fanyanming/fanyanming.github.io/2017/02/15/php学习记录/　　作者: Yanming Fan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -310,6 +326,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/03/10/2017年我的个人规划/">
+                    2017年我的个人规划
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -325,7 +347,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#语法"><span class="toc-number">1.</span> <span class="toc-text">语法</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn,
@@ -356,7 +378,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"test　| Yanming’s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"php学习记录　| Yanming’s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -375,8 +397,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://fanyanming/fanyanming.github.io/2016/12/29/test/';
-            this.page.identifier = '2016/12/29/test/';
+            this.page.url = 'http://fanyanming/fanyanming.github.io/2017/02/15/php学习记录/';
+            this.page.identifier = '2017/02/15/php学习记录/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -416,8 +438,8 @@
 
     // Add comment count
     <script id="dsq-count-scr" src="//null.disqus.com/count.js" async></script>
-    <span class="disqus-comment-count" data-disqus-identifier="2016/12/29/test/"></span>
-    <span class="disqus-comment-count" data-disqus-url="http://fanyanming/fanyanming.github.io/2016/12/29/test/"></span>
+    <span class="disqus-comment-count" data-disqus-identifier="2017/02/15/php学习记录/"></span>
+    <span class="disqus-comment-count" data-disqus-url="http://fanyanming/fanyanming.github.io/2017/02/15/php学习记录/"></span>
     <script>
         $(".disqus-comment-count").hide();
         var $disqusCount = $(".disqus-comment-count");
@@ -436,7 +458,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/03/10/2017年我的个人规划/" title="上一篇: 2017年我的个人规划">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -448,7 +472,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/12/29/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/07/小程序上手记录/">小程序上手记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(to self)(持续更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/24/iOS-那些零碎但有用的东西/">iOS 那些零碎但有用的东西</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/24/block一些简单的用法总结/">block一些简单的用法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/">深拷贝和浅拷贝,可变和不可变的一点点心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/21/hexo-github-搭建个人博客简述/">hexo + github 搭建个人博客简述</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/2017年我的个人规划/">2017年我的个人规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/php学习记录/">php学习记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/07/小程序上手记录/">小程序上手记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/">swift 3.0,英文文档学习记录(to self)(持续更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/24/iOS-那些零碎但有用的东西/">iOS 那些零碎但有用的东西</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/24/block一些简单的用法总结/">block一些简单的用法总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/深拷贝和浅拷贝-可变和不可变的一点点心得/">深拷贝和浅拷贝,可变和不可变的一点点心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/21/hexo-github-搭建个人博客简述/">hexo + github 搭建个人博客简述</a></li></ul>
 
 
 
@@ -462,7 +486,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2014-2016 Yanming Fan
+                2014-2017 Yanming Fan
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>

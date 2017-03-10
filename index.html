@@ -257,11 +257,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017年我的个人规划" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/12/29/test/" class="article-date">
-      <time datetime="2016-12-29T02:23:11.000Z" itemprop="datePublished">2016-12-29</time>
+      <a href="/2017/03/10/2017年我的个人规划/" class="article-date">
+      <time datetime="2017-03-10T05:42:20.000Z" itemprop="datePublished">2017-03-10</time>
 </a>
     </div>
   
@@ -274,7 +274,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/29/test/">test</a>
+      <a class="article-title" href="/2017/03/10/2017年我的个人规划/">2017年我的个人规划</a>
     </h1>
   
 
@@ -284,7 +284,85 @@
     <div class="article-entry" itemprop="articleBody">
       
           
+        <p>2017年虽然已经过去快四分之一了,但是我觉得,只要是现在,就不会晚.</p>
+<ol>
+<li>读书方面,每2月读一本书,不论是什么书,不论是不是电子版,但有要求,就是要每周至少看五天以上,并且要有简单扼要的读书笔记,在每本书结束后进行统一展示到我的个人读书页面,我会另外开一个博客<a href="">2017读书笔记</a>进行展示.</li>
+<li>完成出本行业以外的知识领域完成一个作品,目前备选,php,小程序.</li>
+<li>完成3篇或以上本行业的技术性博客</li>
+<li>自律的培养<ul>
+<li>作息习惯:工作日:’00:00am~08:00am: 休息’ ‘8:00am~9:00am: 看书’ ‘9:00am~8:00pm: 吃饭上下班’ ‘rest time: homework(work), entertainment(movie, game)’</li>
+<li>单纯生活习惯: 吃饭不凑合, 形象(个人, 环境)不邋遢</li>
+</ul>
+</li>
+<li>今年上架一款个人app(iOS)</li>
+<li>每月存(低分险理财产品或股票)下5000RMB, 不再月光,克制不必要消费</li>
+<li>周末自己做一顿饭,丰盛的饭,可以邀请朋友</li>
+<li>每两月对以上目标进行进度汇报    </li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-php学习记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/15/php学习记录/" class="article-date">
+      <time datetime="2017-02-15T07:02:04.000Z" itemprop="datePublished">2017-02-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/15/php学习记录/">php学习记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><ol>
+<li>脚本开始和结尾:&lt;?php ?&gt;</li>
+<li>声明变量用’$’开头,命名风格和OC相似, 变量的作用域分为全局和局部,在函数外声明的变量为全局变量, 函数内部声明的变量为局部变量, 与OC不同的是全局变量是不能直接在函数内部访问的, 除非在要访问的全局变量之前加上global关键字修饰. 顺便提到另外一个关键字’static’,它的作用就是能让局部变量不会在函数执行完毕后被删除.’特别指出的是$符号并不是声明的时候才使用,而是只要是变量,这个符号一直伴随’</li>
+<li>PHP的两种输出方法: 1&gt;echo 2&gt;print;前者可以输出多个字符串,后者只能输出一个字符串,前者没有任何返回值,后者始终返回 1;</li>
+<li>php的数据类型: 字符串、整数、浮点数、逻辑(true和false)、数组、对象(类比OC的话感觉就是字典)、NULL(注:var_dump() 会返回变量的数据类型和值), </li>
+<li>字符串相关的函数:<br>1&gt;计算长度:strlen()<br>2&gt;计算摸个字符串的位置:strpos(),如果未找到返回false</li>
+<li>函数:<br>1&gt;. 形式:function funtionName() {</li>
+</ol>
+<p>}<br>2&gt;. 参数,就放括号里面即可, 需要注意的是默认参数:&lt;?php<br>function setHeight($minheight=50) {<br>  echo “The height is : $minheight <br>“;<br>}</p>
+<p>setHeight(350);<br>setHeight(); // 将使用默认值 50<br>setHeight(135);<br>setHeight(80);<br>?&gt;<br>这里的例子就会在没有传参的时候用上50这个默认值<br>3&gt;. 函数有返回值的时候,使用return即可,不用在函数声明的时候特意指出,OC的函数是需要的特别指明的</p>
+
       
     </div>
     
@@ -402,131 +480,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的"><a href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的" class="headerlink" title="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的"></a>完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的</h3><h3 id="Welcome-to-Swift-lt-–more–-gt"><a href="#Welcome-to-Swift-lt-–more–-gt" class="headerlink" title="Welcome to Swift&lt;–more–&gt;"></a>Welcome to Swift&lt;–more–&gt;</h3><ol>
+              <h3 id="完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的"><a href="#完全是swift3-0-beta来的-看一点写一点-未必理解到位-后续会持续更新和纠正-纠正过的会标记出来-就是一个学习的记录-并且是按着文档的先后顺序来写的" class="headerlink" title="完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的"></a>完全是swift3.0 beta来的,看一点写一点,未必理解到位,后续会持续更新和纠正(纠正过的会标记出来),就是一个学习的记录,并且是按着文档的先后顺序来写的</h3><h3 id="Welcome-to-Swift-lt-—more–-gt"><a href="#Welcome-to-Swift-lt-—more–-gt" class="headerlink" title="Welcome to Swift&lt;!—more–&gt;"></a>Welcome to Swift&lt;!—more–&gt;</h3><ol>
 <li>print 用于输出,等同于OC的NSLog,但是不用占位符,不用’@‘符,一个字+一个字,清爽,不同类型的输出用逗号隔开几即可,拼接的话只需要用’+’连接即可.</li>
 <li>常量用let,变量用var,和oc的有些不同,;let修饰一些你不想变(想变也变不了)的量,哪怕是字符串什么的,而oc中,常量就指的一些类型,能不能变决定不了,比如int,oc中你随便变就是啦.总结来说:指向let声明的常量的’指针’(如果有这一说)是不能变的,而指向var声明的变量的指针是可以变的.<del>至于这个常量或者变量的内部是否可变并不受现在,由其本身属性决定,比如:let声明的NSMutableDictionary字典是可以改变其中的值的</del>(忽略本句,理解有混淆,不准确)</li>
 <li>‘?’的作用,告诉编译器,这个量的值是可选的(optional),可以包含一个值也可以为nil,如果不带’?’,又不给值,系统就会报错,让你必须初始化</li>
-<li>if 条件语句的调只能是Boolean类型,但是像’let A = B’或者是多个<code>let A = B,let B = C,...(一假则假)</code>也可以作为条件,但是B需要时optional类型的,如果为B不为空,就把B赋值给A,并且条件为ture,反之,B为空的话,就条件就为fasle,而且A就没了,对,没了</li>
-<li>switch 语句的break关键字不需要了,但是仍然要有default</li>
-<li>forin语句,如果遍历的是字典,是可以同时遍历value和key的,而且系统在编译的时候就会判断,例如你不是字典类型的元素,非要按key-value方式来判断,它就会报错</li>
-<li>类的声明中,属性必须要有一个初始值,无论是哪种方式,直接赋值,或者同过带参数init函数来初始化,反正要有,类的声明,可以是没有基类的,所以你在声明一个类时,可以不继承任何类.当然你在OC中也可以这样写,但是,但是,你在这个类就是什么方法都没有,生成器都没,但是swift中,你依然可以用()来创建,无论是父类还是子类,只要有属性没有直接赋予初始值,那么你在创建时都要传入缺少初始值的属性的值</li>
-<li>属性声明也可以自定义setter和getter方法,但是在swift中,有setter和getter的属性,一般被视为计算属性,和属性本身其实关系不大,用OC的思想可能有点费解….例如:有个A属性,有个B属性,有个C属性,C属性有setter和getter方法,C可能就是功能性,比如A和B组合的一个效果什么的sum啥的</li>
-<li>枚举,定义方式跟OC差不多,但是灵活的很多,使用范围更广,不限于整型,而且可以使用方法,用起来更贴近于自然的方式,贴近于人类的思考方式,而且每一个枚举的元素会有rawValue属性(只有在枚举声明的时候指明成员类型的才有,因为只有枚举本身有rawType的时候,枚举的成员才有rawValue),也就是你写在枚举名后面的值,不写的话会默认为枚举名,打印的时候也会以枚举名显示,OC中默认会显示rawValue,不论你写的什么GenderMan, GenderWoman,打印出来都是整型值.下面是随便写的一些枚举,是不是很灵活啊</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">enum Gender:Int &#123;</span><br><span class="line">        case GenderMale = 1</span><br><span class="line">        case GenderFemale</span><br><span class="line">        case GenderOther</span><br><span class="line">        </span><br><span class="line">        func descriptionInChinese() -&gt; String &#123;</span><br><span class="line">            switch self &#123;</span><br><span class="line">            case . GenderMale:</span><br><span class="line">                return &quot;男人&quot;</span><br><span class="line">            case . GenderFemale:</span><br><span class="line">                return &quot;女人&quot;</span><br><span class="line">            default:</span><br><span class="line">                return &quot;其他&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    enum myList: String &#123;</span><br><span class="line">        case potato = &quot;土豆&quot;</span><br><span class="line">        case drinkWater = &quot;饮用水&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>还不是看起来像是一个类的定义,只不过把class关键字换成了enum,哈哈,如果是struct就更像了,官方的说法就是,他们确实有很多相似之处,但是最大的不同就是,结构体的使用都是拷贝方式,你引用几次就拷贝几次,但是class就不同,他是真的是引用,你可以理解为,同一个对象,你在不同的地方用,其实只是用不同的指针指向它而已,可以说,class更加节省空间,附上原话,免得说我瞎扯,😁</p>
-<blockquote>
-<p>“Use struct to create a structure. Structures support many of the same behaviors as classes, including methods and initializers. One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.”<br>摘录来自: Apple Inc. “The Swift Programming Language (Swift 3)”。 iBooks. </p>
-<ol>
-<li>上面也提到结构体,其实你可以认为swift中所有类型的对象都是结构体,只是说他们各自有一些特殊的属性,枚举也是一种结构体</li>
-</ol>
-</blockquote>
-<h3 id="Language-Guide-The-Bascis"><a href="#Language-Guide-The-Bascis" class="headerlink" title="Language Guide - The Bascis"></a>Language Guide - The Bascis</h3><ol>
-<li>swift里面的数据类型:Int(整型),Float/Double(浮点型),Array/Set/Dictionary(集合),String(文本,字符串),Bool(布尔类型),tuples(元组,Objective-C中没有的)</li>
-<li>使用let声明常量,var声明变量,和数据类型没有关系,不需要变的你就要let,变的你就用var.使用let 和 var的时候都是可以连续声明的,比如let a = 1, b = 2, c = 3这种.无论是var还是let在<code>使用前</code>必须要初始化,不然报错,在类型注释后面加?也是初始化的一种(但是只适用于变量,常量声明的时候哪怕你在类型注释后加了?,你依然要在试用前给他一个初始值),意思是你没指明初始值,那系统就会给你一个nil值.常量名和变量名可以用基本上所有的东西来命名,汉字,emoji等等,但是常见的一些禁用方式,依然是禁用的,什么数字开头,空格,私有或者保留的字段,-,等等</li>
-<li>swift的注释和 Objective-C类似,但是多行注释是可以嵌套多行注释的.</li>
-<li>分号;在swift中不是必须的,你想写,也没人说你,但是如果在一行写多个语句必须用;隔开</li>
-<li>整型(signed(+,0,-)/unsigned(0,+)),常用的就是Int,系统会自动根据系统的位数来判断取值范围,当然你也可以用Int8,Int32,Int64来声明变量或常量,但是,其实不常用,如果是无符号整型,用UInt,官方推荐用Int,无论是从安全还是从效率方面.</li>
-<li>浮点型,signed浮点型包括Float(32位)和Double(64位)</li>
-<li><p>typealias,关键字,等同于type define,例如</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> <span class="type">MyInt</span> = <span class="type">Int</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Bool类型只有两个值ture 和 fasle ,这个和非0即真还是有很大区别的</p>
-</li>
-<li>Tuple,元组,swift中新增的类型,其实很像结构体,有没有<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http404Error = (<span class="number">404</span>, <span class="string">"Not Found"</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>元组的元素,可以是任何类型的数据,元组在返回值是多个的时候特别有用</p>
-<ol>
-<li><p>Optionals,可选类型,这个就是之前(c或者Objective-c中)没有的,用处是,直接表现就是在类型的后面加上?,没有指明是可选类型的变量(对,变量,常量单独说),是不能被赋予nil值的,或者是,你使用这个变量的时候必须要手动初始化,但是加上这个<code>?</code>以后,你就可以不必非要手动初始化,系统会自动把它的值设为nil,还有对于未知累的结果也要带上?,防止未知的结果是空,这些注意事项,编译时都是会报错的,如果没有遵守.例如:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> possibleNumberString = “<span class="number">123</span>”</span><br><span class="line"><span class="comment">// let possibleNumberString = “hello, world”</span></span><br><span class="line"><span class="keyword">let</span> number: <span class="type">Int</span>? = <span class="type">Int</span>(possibleNumberString)<span class="comment">// </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> someString: <span class="type">String</span>?</span><br><span class="line"><span class="built_in">print</span>(someString)<span class="comment">// 不会报错,但是,不加?,系统就会报错,让你使用前初始化,其实加上?的时候系统就给了一个nil值</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>nil,swift中的nil可以赋值给任何对象,不限于是不是基本数据类型,因为,它并不是一个指针,它就是一个值,特殊的值,通吃的值.Objective-c中,nil是指向空的一个指针,所以,它只能赋值给实例对象</p>
-</li>
-<li>!(forced unwrapping),对, 问号说完说叹号,目前来看,直观的效果就是能带问号后对象前的optional去掉:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Optional(2)—&gt;2// !,你确定这个对象是有值的你才用,不然就会崩溃的...</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="Basic-Operators-基本运算符"><a href="#Basic-Operators-基本运算符" class="headerlink" title="Basic Operators(基本运算符)"></a>Basic Operators(基本运算符)</h3><ol>
-<li>其实和c和OC中的基本一致,只是需要强调的是swift中的运算式是不会反会值的,所以a = b = 1 + 3,这些写,a并不会等于4,而是啥都没,当然swift中新增了<code>===</code>和<code>!==</code>,判断两个指针是不是指像同一个实例,返回值为Bool值</li>
-<li>单独说一下元组的比较,官方举例中有一段:<br><code>Tuples are compared from left to right, one value at a time, until the comparison finds two values that aren’t equal. If all the elements are equal, then the tuples themselves are equal</code>翻译一下就是元组的比较是从左到右的,直到找到不相等的元素时停止比较,返回不相等的两个元素的比较结果,如果全部相等就是相等.需要注意的是,<code>元素的数量必须少于7个,高于或等于7个元素的比较,你自己看着办,我们不管(🍎说的)</code><br>举得例子:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(3, &quot;apple&quot;) &lt; (3, &quot;bird&quot;)    // true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird”</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>上面的例子解析一个,3等于3,继续比较”apple”和”bird”,并且”apple”和”bird”的比较也是遵守从左到右的那个规则,a&lt;b,不相等就结束了(字符串的比较结束了,整个元组的比较也结束了),结果就是前者小于后者,那就是ture<br>这里贴一个笑话,解释为什么”bird”比”apple”大,我觉得挺有道理😝</p>
-<blockquote>
-<p><img src="/assets/images/2016/swiftLearning01.png" alt="joke"></p>
-<ol>
-<li>三目运算,和c语言是一样 a = statement ? b : c,statement为true就执行b,并返回b的值,反之执行c,返回c的值</li>
-<li>Nil-Coalescing Operator,暂且翻译为空值合并操作符,a??b(a必须是可选类型的值,b的类型必须要和a可能的值的类型是一样的),a为nil的时候就会执行b,并返回b的值,否者执行a,返回a的a!值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var adultAge:Int?</span><br><span class="line">let standedAge = 18</span><br><span class="line">let age = adultAge ?? standedAge  </span><br><span class="line">print(age)// prints “18”</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let adultAge:Int? = 20</span><br><span class="line">let standedAge = 18</span><br><span class="line">let age = adultAge ?? standedAge</span><br><span class="line">print(adultAge, age)// prints “Optional(17) 17”</span><br></pre></td></tr></table></figure>
-<p>至于使用场景应该很多,应该挺有用,不在举例,很多无数据处理可能用得上</p>
-<ol>
-<li>区间运算符,分为2种:闭区间操作符(a…b,表示 a &lt;= x &lt;= b),半开区间操作符(a..&lt;b,表示a &lt;= x &lt;b)</li>
-<li>逻辑运算符,!,&amp;&amp;,||,和c中一致,用于Bool值的运算,对于&amp;&amp;,左边的为false后,右边的就不会执行了,对于||,左边的true时,右边的也不会执行了.多见于面试题,挺无聊的.当然对于多个逻辑运算符的,也是按着从左到右的顺序来执行的,当然有良好编码风格的码农,是会加上小括号来提高阅读性能的</li>
-</ol>
-<h3 id="Strings-and-Characters"><a href="#Strings-and-Characters" class="headerlink" title="Strings and Characters"></a>Strings and Characters</h3><ol>
-<li>swift的String 用来代表字符串和字符类型,相当于OC的NSString,实际上String也是桥接于NSString的</li>
-<li>String类型的字符串或者字符是否可变又let和variable来决定,这一点就比OC的简洁很多</li>
-<li><p>String类型的字符串或者字符的传递是使用拷贝的方式,这也是为什么OC中,对于字符串中的字符的遍历,使用for in遍历某个字符串的.characters数组,例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for character in &quot;Dog!🐶&quot;.characters &#123;</span><br><span class="line">    print(character)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果你声明一个字符,只需要在声明的时候类型指明是字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let exclamationMark: Character = &quot;!&quot;</span><br><span class="line">```也可以直接用一个字符数组来组成一个字符串</span><br></pre></td></tr></table></figure>
-<p> let catCharacters: [Character] = [“C”, “a”, “t”, “!”, “🐱”]</p>
-<pre><code>let catString = String(catCharacters)
-print(catString)
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5. 字符串的拼接很简单,+号连接就行,起码比OC简洁了,尽管其他语言都在用了,也可以+=来拼接</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>var instruction = “look over”<br>instruction += string2<br>// instruction now equals “look over there<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">`+号只适用于同类型的拼接,所以并不适用于字符和字符串`,如果想把一个字符拼接到字符串上,调用字符串的`append()`方法</span><br><span class="line">```let exclamationMark: Character = &quot;!&quot;</span><br><span class="line">welcome.append(exclamationMark)</span><br><span class="line">// welcome now equals &quot;hello there!```需要强调的字符串是不能拼接给字符的,字符就是只有一个字符,那你还拼接啥</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li><p>字符串插入的问题,/来占位插入,如下,也是很简洁,不用数长度,数位置了,直观</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">et messagePart = &quot;ell&quot;</span><br><span class="line">let message = &quot;h\(messagePart)o,world&quot;</span><br><span class="line">print(message)</span><br><span class="line">// prints &quot;hello,world&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>求字符串长度依然用<code>characters.count</code></p>
-</li>
-<li>访问字符串的特定位置的字符,就和OC中有区别了,因为swift中的每个字符的存储的空间不是一定相等的,所以不能用数字下表来访问,而是新方式:而是用<code>startIndex</code>和<code>endIndex</code>属性来确定起始位置,用<code>before</code>和<code>after</code>来表示前一个和后一个,offset表示偏移的跨度,总结起来的格式:<code>字符串[索引]</code>,越界也是会崩溃,依然是运行时崩溃<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let greeting = &quot;Guten Tag!&quot;</span><br><span class="line">print(greeting[greeting.startIndex])</span><br><span class="line">// G</span><br><span class="line">print(greeting[greeting.index(before: greeting.endIndex)])</span><br><span class="line">// !</span><br><span class="line">print(greeting[greeting.index(after: greeting.startIndex)])</span><br><span class="line">// u</span><br><span class="line">let index = greeting.index(greeting.startIndex, offsetBy: 7)</span><br><span class="line">print(greeting[index])</span><br><span class="line">// a</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>有一点必须强调,好坑:<code>The endIndex property is the position after the last character in a String</code>,endIndex表示的是最后一个字符的后面(对,后面)的位置,what the xxx..,这是出于什么设计,要这么坑,不明觉厉<br>以上的访问方法(startIndex , endIndex ,index(before:), index(after:), index(_:offsetBy:)),也适用于其他集合类型的数据的访问:Array, Dictionary, and Set</p>
-<ol>
-<li>在String中插入String或者character,使用<code>insert(_:at:)</code>和<code>insert(contentsOf:at:)</code>,移除操作的话,<code>remove(at:)</code>和<code>removeSubrange(_:)</code></li>
-<li>字符串的章节好长,又没啥好说的,枯燥….(学习记录,真是学习记录)</li>
-<li><code>hasPrefix(_:)</code> 和 <code>hasSuffix(_:)</code>方法返回Bool值,用来比较前缀和后缀</li>
-<li>中间有好多Unicode的东西,这里不提了,用到的时候,结合场景再说<h3 id="Collection-Types—集合类-arrays-sets-dictionaries"><a href="#Collection-Types—集合类-arrays-sets-dictionaries" class="headerlink" title="Collection Types—集合类(arrays,sets,dictionaries)"></a>Collection Types—集合类(arrays,sets,dictionaries)</h3><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4></li>
-<li><code>var threeDoubles = Array(repeating: 0.0, count: 3)</code>新玩意,表示[0.0, 0.0, 0.0]</li>
-<li>其他的用法和OC中大抵是一致的,可以直接用小标访问或者改变元素,哪怕替换时数量不一样,但是下标依然不能越界,你不能在有2个元素的数组中,以someArray[2] = “last”的方式添加元素,反正下标不能越界就对了</li>
-<li>数组的拼接和插入:<code>append()</code>和<code>insert(_:at:)</code>方法,前者直接放到最后,后者会排放到你指定的位置,这里要<code>强调</code>一点的,insert方法,执行过程就是先把元素插进去,再摆放,所以插入的位置最大值等于最大索引+1,你要是插入一个数组,也是适用的<figure class="highlight plain"><figcaption><span>shoppingList = ["egg", "milk","vegetable"]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shoppingList.insert(contentsOf: [&quot;union&quot;, &quot;potato&quot;], at: 3)// 原数组最大索引为2,我插入的位置是3也是对的</span><br><span class="line"></span><br><span class="line">print(shoppingList)</span><br><span class="line"></span><br><span class="line">var shoppingList1: [Any] = [1,&quot;egg&quot;,&quot;milk&quot;]</span><br><span class="line">shoppingList1.append(shoppingList)</span><br><span class="line">shoppingList1.insert(2, at: 4)</span><br><span class="line">print(shoppingList1)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<ol>
-<li>移除的话<code>remove(at:)</code>即可,这个方法是有返回值的,返回被移除的元素,很好用.还有其他直观的移除方法,可以直接Xcode查看,很easy的</li>
-<li>遍历数组的,可以用for-in方法,如果想有索引的话,只需要遍历的数组是<code>shoppingList1.enumerated()</code>即可,<code>shoppingList1.enumerated</code>会返回一个(n,x)对,n是索引,x元素</li>
-</ol>
-<h4 id="Set-无序的数组"><a href="#Set-无序的数组" class="headerlink" title="Set- 无序的数组"></a>Set- 无序的数组</h4><ol>
-<li>Set很大一个特点就是它里面的元素都是不一样的,所以你可以运用Set来过滤掉数组里面重复而且你不需要的值,因为Set是无序的,所以,索引也就不适用了,插入,删除什么的直接操作你想操作的元素就行,因为没有重复的</li>
-<li>遍历.for-in,<code>.sorted()</code>会生成一个排了序的数组,从小到大</li>
-<li>下面四个方法,我觉得很好很实用,一张图搞定<blockquote>
-<p><img src="/assets/images/2016/swiftLearning02.png" alt="set相关方法"></p>
-</blockquote>
-</li>
-</ol>
-<h4 id="Dictionary-字典"><a href="#Dictionary-字典" class="headerlink" title="Dictionary - 字典"></a>Dictionary - 字典</h4><ol>
-<li>第一变化,swift中的集合同意用<code>[]</code>来表示,不会再有<code>{}</code>单独来表示字典一说,这样就简洁(swift最直观的印象词)很多.</li>
-<li>Dictionary类型的使用中有一个<code>updateValue(_:forKey:)</code>方法,这个方法会返回更新之前的值,如果有的话,所以它是一个可选类型的值,是个带<code>?</code>的值</li>
-<li>访问某个键值对是,无论是键值对不存在,还是单纯的不存在值,都会返回一个nil值,存在的话就会返回一个带optional的值,代码演示如下:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var myDic = [1: &quot;one&quot;, 2: &quot;two&quot;]</span><br><span class="line">myDic[3] = &quot;three&quot;</span><br><span class="line">if let value = myDic[3] &#123;</span><br><span class="line">   print(myDic[3])</span><br><span class="line">   print(value)</span><br><span class="line">   print(myDic[3]!)</span><br><span class="line"> &#125;</span><br><span class="line">/*</span><br><span class="line">Optional(&quot;three&quot;)</span><br><span class="line">three</span><br><span class="line">three</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="Control-Flow"><a href="#Control-Flow" class="headerlink" title="Control Flow"></a>Control Flow</h4><ol>
-<li>while ,repeat while (可参考do while),没什么变化,不在详解</li>
-<li>if switch ,这里说下switch,还之前相比较,不用再写break了,之前不写break的时候会穿透到下一语句执行,但是swift中就不可以这这样写,会报错,想写包含多种情况的语句,直接写在一起,用逗号隔开即可(条件很多很长的可以换行的),当然最好用的是,可以这样写:点和范围可以共存,这在c和oc中是不可以的<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">let approximateCount = 62</span><br><span class="line">let countedThings = "moons orbiting Saturn"</span><br><span class="line">var naturalCount: String</span><br><span class="line">switch approximateCount &#123;</span><br><span class="line">case 0:</span><br><span class="line">    naturalCount = "no"</span><br><span class="line">case 1..&lt;5:</span><br><span class="line">    naturalCount = "a few"</span><br><span class="line">case 5..&lt;12:</span><br><span class="line">    naturalCount = "several"</span><br><span class="line">case 12..&lt;100:</span><br><span class="line">    naturalCount = "dozens of"</span><br><span class="line">case 100..&lt;1000:</span><br><span class="line">    naturalCount = "hundreds of"</span><br><span class="line">default:</span><br><span class="line">    naturalCount = "many”</span><br><span class="line">&#125;</span><br><span class="line">print("There are \(naturalCount) \(countedThings)."</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="元组-Tuple-多元的组😝"><a href="#元组-Tuple-多元的组😝" class="headerlink" title="元组(Tuple),多元的组😝"></a>元组(Tuple),多元的组😝</h4>
+<li>if 条件语句的调只能是Boolean类型,但是像’let A = B’或者是多个<code>let A = B,let B = C,...(一假则假)</code>也可以作为条件,但是B需要时optional类型的,如果为B不为空,就把B赋值给A,并且条件为ture,反之,B为空的话,就条件就为fasle,而且A就没了,对,没了
+          
       
     </div>
     
@@ -535,6 +494,10 @@ print(catString)
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2016/09/09/swift-3-0-英文文档学习记录-持续更新/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -797,7 +760,7 @@ print(catString)
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2014-2016 Yanming Fan
+                2014-2017 Yanming Fan
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
